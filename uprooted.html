@@ -37,72 +37,27 @@
       color: #c7c0ff;
     }
 
-    .slideshow-container {
+    .iframe-container {
+      max-width: 80%; /* Adjusted width for larger screens (desktops) */
+      margin: auto; /* Center the container */
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
       position: relative;
-      max-width: 100; /* Adjusted to 60% of the viewport width */
-      margin: auto;
+      height: 0;
       overflow: hidden;
-      padding-bottom:15%;
-      max-height: 70vh;
     }
 
-    .gallery-image {
-      display: none;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: auto;
-      transition: opacity 1.5s ease;
+      height: 100%;
     }
-
-    .gallery-image.active {
-      display: block;
-    }
-
-    /* Navigation bar at the bottom */
-    .navigation-bar {
-      padding: 10px;
-      position: fixed;
-      bottom: 10%;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      z-index: 2;
-      background-color: rgba(0, 0, 0, 0); /* Transparent background */
-    }
-
-    /* Navigation arrows and pause button */
-/* Navigation arrows and pause button */
-
-.prev, .pause, .next {
-  position: absolute;
-  font-size: 24px;
-  cursor: pointer;
-  user-select: none;
-  color: #ffc0d9;
-  padding: 16px;
-  border: none;
-  z-index: 1; /* Ensure they are above the images */
-}
-.prev {
-  left: 24px; /* Adjusted to be 24px from the left */
-}
-
-.pause {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.next {
-  right: 24px; /* Adjusted to be 24px from the right */
-}
-
-    
 
     /* Style for mobile devices */
     @media only screen and (max-width: 600px) {
-      .slideshow-container {
-        width:90%;
-        height: auto;
-        padding:0;
+      .iframe-container {
+        max-width: 95%;
       }
     }
   </style>
@@ -110,28 +65,23 @@
 
 <body>
   <header>
-  <h1><a href="index.html">ollie morris</a></h1>
-  <ul>
-    <li><a href="erp.html">erp</a></li>
-    <li>|</li>
-    <li><a href="uprooted.html">uprooted</a></li>
-        <li>|</li>
-    <li><a href="rolts.html">rolt's</a></li>
-        <li>|</li>
-    <li><a href="contact.html">contact</a></li>
-  </ul>
+    <h1><a href="index.html">ollie morris</a></h1>
+    <ul>
+      <li><a href="erp.html">erp</a></li>
+      <li>|</li>
+      <li><a href="uprooted.html">uprooted</a></li>
+      <li>|</li>
+      <li><a href="rolts.html">rolt's</a></li>
+      <li>|</li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
   </header>
 
-  <div style="position: relative; padding-bottom: 56.25%; padding-top: 10px; height: 0; overflow: hidden; max-width: 60%; margin: auto;">
-  <iframe src="https://player.vimeo.com/video/907604444?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="Uprooted - Ollie Morris 2022"></iframe>
-</div>
+  <div class="iframe-container">
+    <iframe src="https://player.vimeo.com/video/907604444?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Uprooted - Ollie Morris 2022"></iframe>
+  </div>
 
   <script src="https://player.vimeo.com/api/player.js"></script>
-  <!-- Content specific to the "Work" page -->
-
-  <!-- Common footer if needed -->
-
-  <script src="slideshow.js" defer></script> <!-- Place the script tag here -->
 </body>
 
 </html>
