@@ -1,0 +1,114 @@
+* {
+    font-family: monospace;
+    font-weight: bold;
+    background-color: #005d1b;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+    position: sticky;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    font-weight: bold;
+}
+
+/* Your existing styles... */
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: auto;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 50%; /* Set maximum width to 50% */
+  margin: auto;
+  overflow: hidden;
+}
+
+.gallery-image {
+  display: none; /* Start with images hidden */
+  width: 100%;
+  height: auto;
+  transition: opacity 1.5s ease; /* Smooth fade transition over 1.5 seconds */
+}
+
+
+.gallery-image.active {
+  display: block; /* Display the active image immediately without transition */
+}
+p {
+  font-weight: bold;
+  color: #ffc0d9;
+}
+
+li {
+  display: inline-block;
+  font-size: 150%;
+  color:white;
+}
+
+a:hover {
+  color: #c7c0ff;
+}
+
+a {
+  text-decoration-line: none;
+  color: #c7c0ff;
+}
+
+li a {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  padding: 10px;
+  text-align: center;
+    color: #ffc0d9;
+}
+
+h1 a {
+  color: white;
+}
+
+h1 {
+  font-size: 250%;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* ... Your existing styles ... */
+
+/* Navigation arrows and pause button */
+.prev, .pause, .next {
+  position: absolute;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  color: #ffc0d9;
+  padding: 16px;
+  border: none;
+  z-index: 1; /* Ensure they are above the images */
+}
+
+.prev {
+  left: 40%;
+    color: #ffc0d9;
+}
+
+.pause {
+  left: 50%; /* Center the pause button */
+  transform: translateX(-50%);
+}
+
+.next {
+  right: 40%;
+}
+
+/* ... Your existing styles ... */
