@@ -38,10 +38,8 @@
 
     .slideshow-container {
       position: relative;
-      max-width: 70vw; /* Adjusted to 100% of the viewport width */
       margin: auto;
       overflow: hidden;
-      max-height: auto;
     }
 
     .gallery-image {
@@ -93,18 +91,39 @@
       right: 24px; /* Adjusted to be 24px from the right */
     }
 
-    /* Style for mobile devices */
+    /* Style for smaller screens */
     @media only screen and (max-width: 600px) {
       .slideshow-container {
-        width: 90%;
+        max-width: 90%;
         height: auto;
-        padding: 0;
+        margin-top: 20px; /* Add some space at the top */
+      }
+
+      .gallery-image {
+        width: 100%; /* Full width for smaller screens */
+      }
+    }
+
+    /* Style for larger screens */
+    @media only screen and (min-width: 601px) {
+      .slideshow-container {
+        max-width: auto; /* Adjusted to 70% of the viewport width */
+        max-height: 70vh;
+        margin-top: 20px; /* Add some space at the top */
       }
     }
   </style>
 </head>
 
 <body>
+  <script>
+    // Check if the width of the window is below or equal to 600 pixels
+    if (window.innerWidth <= 600) {
+      // Add a class to the body for additional styling
+      document.body.classList.add('small-screen');
+    }
+  </script>
+
   <header>
     <h1><a href="index.html">ollie morris</a></h1>
     <ul>

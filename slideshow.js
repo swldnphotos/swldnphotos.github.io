@@ -32,8 +32,16 @@ document.addEventListener("DOMContentLoaded", function () {
     slides[index].classList.add('active');
   }
 
-  function adjustContainerSize() {
-    var activeImage = document.querySelector('.gallery-image.active');
+function adjustContainerSize() {
+  var screenWidth = window.innerWidth;
+  var container = document.querySelector('.slideshow-container');
+  var activeImage = document.querySelector('.gallery-image.active');
+
+  if (screenWidth <= 600) {
+    // If the screen width is less than or equal to 600 pixels (phone screen)
+    container.style.maxWidth = '90%';
+  } else {
+    // If the screen width is greater than 600 pixels (larger screen)
 
     if (activeImage) {
       var imgWidth = activeImage.naturalWidth;
@@ -41,25 +49,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
       console.log(`Image dimensions - Width: ${imgWidth}, Height: ${imgHeight}`);
 
-      var container = document.querySelector('.slideshow-container');
       if (imgWidth > imgHeight) {
-        container.style.maxWidth = '50%';
-        container.style.maxHeight = '40%';
-        console.log('Adjusting container size - Width greater than Height');
-      } else {
+        // Landscape image
         container.style.maxWidth = '50%';
         container.style.maxHeight = '100vh';
-        console.log('Adjusting container size - Height greater than Width');
+        console.log('Adjusting container size - Landscape image');
+      } else {
+        // Portrait image
+        container.style.maxWidth = '40%';
+        container.style.maxHeight = '50%';
+        console.log('Adjusting container size - Portrait image');
       }
     }
   }
+}
 
-  function changeSlide(direction) {
-    console.log(`Changing slide – ${currentIndex + direction}`);
-    currentIndex = (currentIndex + direction + slides.length) % slides.length;
-    showSlide(currentIndex);
-    adjustContainerSize(); // Add this line to call adjustContainerSize after changing the slide
+  function removeInlineStyles() {
+    // Remove inline styles from the slideshow container
+    var slideshowContainer = document.querySelector('.slideshow-container');
+    slideshowContainer.style.removeProperty('max-width');
+    slideshowContainer.style.removeProperty('max-height');
   }
+
+  // Call the removeInlineStyles function after the page has loaded
+  removeInlineStyles();
+
+
+
+function changeSlide(direction) {
+  console.log(`Changing slide – ${currentIndex + direction}`);
+  currentIndex = (currentIndex + direction + slides.length) % slides.length;
+  showSlide(currentIndex);
+  adjustContainerSize(); // Call adjustContainerSize after changing the slide
+}
+
 
   console.log("Initial slide set");
   // Set an initial slide

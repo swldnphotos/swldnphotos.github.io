@@ -34,23 +34,38 @@
     }
 
     img {
-      width: 50%; /* Take up 100% of the container width */
-      height: auto; /* Maintain aspect ratio */
-      max-height: auto; /* Set a maximum height */
-      display: block; /* Remove extra spacing below the image */
-      margin: 0 auto; /* Center the image horizontally */
-      margin-top: 20px; /* Add some space at the top */
+      width: 50%; /* Default width for desktop */
+      height: auto;
+      max-height: auto;
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
     }
 
     p {
       font-size: 150%;
-      margin: 10px; /* Add some margin for better spacing */
+      margin: 10px;
       color: #ffc0d9;
+    }
+
+    /* Additional styles for small screens */
+    @media only screen and (max-width: 600px) {
+      img {
+        width: 90%; /* Adjusted width for small screens (phones) */
+      }
     }
   </style>
 </head>
 
 <body>
+  <script>
+    // Check if the width of the window is below a certain threshold (e.g., 600px)
+    if (window.innerWidth <= 600) {
+      // Add a class to the body for additional styling
+      document.body.classList.add('small-screen');
+    }
+  </script>
+
   <h1><a href="index.html">ollie morris</a></h1>
   <ul>
     <li><a href="erp.html">erp</a></li>
