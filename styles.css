@@ -104,6 +104,7 @@ h1 {
   position: absolute;
   font-size: 24px;
   cursor: pointer;
+  font-family: monospace;
   user-select: none;
   color: #ffc0d9;
   padding: 16px;
