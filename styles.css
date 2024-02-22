@@ -1,10 +1,24 @@
 * {
-    font-family: monospace;
-    font-weight: bold;
+    /*font-family: monospace;
+    font-weight: bold;*/
+    font-family: "Roboto Serif", serif;
     background-color: #005d1b;
     text-align: center;
+    text-transform: uppercase;
     margin: 0;
     padding: 0;
+}
+
+
+
+h1{
+  font-family: "Roboto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "GRAD" 0;
 }
 
 ul {
