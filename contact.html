@@ -31,7 +31,7 @@
     p {
       text-align: center;
       margin-top: 20px; /* Adjust the margin to control the vertical position */
-      font-size: 100%;
+      font-size: 150%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -44,10 +44,23 @@
     p a {
       margin-top: 10px; /* Adjust the margin between links */
     }
+
+    @media only screen and (max-width: 600px) {
+      p{
+        font-size: 100%;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <script>
+    // Check if the width of the window is below or equal to 600 pixels
+    if (window.innerWidth <= 600) {
+      // Add a class to the body for additional styling
+      document.body.classList.add('small-screen');
+    }
+  </script>
   <h1><a href="index.html">ollie morris</a></h1>
   <ul>
     <li><a href="erp.html">ERP</a></li>
