@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
       intervalId = setInterval(function () {
         console.log("Auto-advancing to the next slide");
         changeSlide(1);
-      }, 7500);
+      }, 1000);
     }
   }
 
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!isPaused) {
       changeSlide(1);
     }
-  }, 7500);
+  }, 1000);
 
   window.changeSlide = changeSlide;
 
