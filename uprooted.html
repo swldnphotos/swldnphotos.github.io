@@ -33,9 +33,9 @@
     }
 
     .iframe-container {
-      max-height: 30%; /* Adjusted width for larger screens (desktops) */
+      max-height: 40%; /* Adjusted width for larger screens (desktops) */
       margin: auto; /* Center the container */
-      padding-bottom: 40%; /* 16:9 aspect ratio */
+      padding-bottom: 50%; /* 16:9 aspect ratio */
       position: relative;
       height: 0;
       overflow: hidden;
@@ -53,7 +53,9 @@
     @media only screen and (max-width: 600px) {
       .iframe-container {
         max-width: 95%;
+        padding-bottom: 65%;
       }
+
     }
   </style>
 </head>
@@ -73,7 +75,7 @@
   </header>
 
   <div class="iframe-container">
-    <iframe src="https://player.vimeo.com/video/907604444?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Uprooted - Ollie Morris 2022"></iframe>
+    <iframe src="https://player.vimeo.com/video/907604444?badge=0&amp;autopause=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Uprooted - Ollie Morris 2022"></iframe>
   </div>
 
   <script src="https://player.vimeo.com/api/player.js"></script>
