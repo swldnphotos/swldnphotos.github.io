@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var currentIndex = 0;
   var slides = document.querySelectorAll('.gallery-image');
-  var isPaused = true;
+  var isPaused = false;
   var intervalId = null; // Declare intervalId globally
 
   function togglePause() {
@@ -51,13 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (imgWidth > imgHeight) {
           // Landscape image
-          container.style.maxWidth = '50%';
-          container.style.maxHeight = '100vh';
+          activeImage.style.height = '60%';
+          //activeImage.imgWidth = '50%';
           console.log('Adjusting container size - Landscape image');
         } else {
           // Portrait image
-          container.style.maxWidth = '40%';
-          container.style.maxHeight = '50%';
+          activeImage.style.width = '65%';
           console.log('Adjusting container size - Portrait image');
         }
       }
@@ -87,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       intervalId = setInterval(function () {
         console.log("Auto-advancing to the next slide");
         changeSlide(1);
-      }, 1000);
+      }, 1500);
     }
   }
 
@@ -121,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!isPaused) {
       changeSlide(1);
     }
-  }, 1000);
+  }, 1500);
 
   window.changeSlide = changeSlide;
 
