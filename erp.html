@@ -10,6 +10,7 @@
   <meta name="keywords" content="erp, photographic project, OCD, nature, healing, nature photography, mental health, therapy, environment, marks in nature, Ollie Morris">
   <meta name="author" content="Ollie Morris">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
 
   <title>ERP - A Photographic Project by Ollie Morris</title>
   <link rel="stylesheet" href="styles.css">
@@ -26,14 +27,18 @@
 .slick-slider {
   width: 70%; /* Set maximum widthdhdj */
   margin: 0 auto; /* Center the slider horizontally */ 
+  margin-top: 5%;
 } 
 @media only screen and (max-width: 600px) {
     .slick-slider {
   width: 90%; /* Set maximum width */
   margin: 0 auto; /* Center the slider horizontally */
   padding-top: 5% auto;
-  dots: false;
+  margin-top: 40%;
 }
+.luxbar-brand{
+        font-size: 8vw;
+      }
     }
 
     h1 {
@@ -59,6 +64,11 @@
   font-size: 30px;
   color: white;
 }
+@media only screen and (max-width:950px){
+    .luxbar-brand{
+        font-size: 100%;
+      }
+  }
 
 .prev-arrow{
 left: -5%;
@@ -79,22 +89,35 @@ left: -5%;
 .fa {
   font-size: 24px; /* Adjust the font size as needed */
 }
+.luxbar-fixed{
+  margin-bottom: 20%;
+}
+.luxbar-menu-material-green{
+      background-color: transparent;
+    }
 
   </style>
 </head>
 
 <body>
-  <header>
-    <h1><a href="index.html">ollie morris</a></h1>
-    <ul>
-      <li><a href="erp.html">erp</a></li>
-      <li>|</li>
-      <li><a href="uprooted.html">uprooted</a></li>
-      <li>|</li>
-      <li><a href="rolts.html">rolt's</a></li>
-      <li>|</li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
+  <header id="luxbar" class="luxbar-fixed">
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green">
+        <ul class="luxbar-navigation">
+            <li class="luxbar-header">
+                <a href="index.html" class="luxbar-brand">Ollie Morris</a>
+                <label class="luxbar-hamburger luxbar-hamburger-spin" 
+                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+            </li>
+            <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
+  
+            <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
+  
+            <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
+  
+            <li class="luxbar-item"><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
   </header>
 
   <!-- Slick Slider Container -->
@@ -146,8 +169,10 @@ left: -5%;
         arrows: false,
         speed: 250,
         accessibility:true,
-  fade: true,
-  cssEase: 'linear',
+        pauseOnFocus:true,
+        fade: true,
+        pauseOnHover:false,
+        cssEase: 'linear',
         nextArrow: "<button class='slide-arrow next-arrow'><i class='fas fa-angle-right'></i></button>",
         prevArrow: "<button class='slide-arrow prev-arrow'><i class='fas fa-angle-left'></i></button>"
       });

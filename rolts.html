@@ -4,169 +4,168 @@
 <head>
   <meta charset="utf-8">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,700;1,8..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,700;1,8..144,700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Explore ERP, a photographic project by Ollie Morris, focusing on the journey of dealing with OCD and finding healing through nature. Discover the marks left on nature by people who have never met.">
+  <meta name="keywords" content="erp, photographic project, OCD, nature, healing, nature photography, mental health, therapy, environment, marks in nature, Ollie Morris">
+  <meta name="author" content="Ollie Morris">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+
   <title>Rolt's Boatyard</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Add Slick CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <!-- Add Slick theme CSS (optional) -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
-
-    body {
-      text-align: center;
+    /* Updated CSS for the Slick slider */
+.slick-slider {
+  width: 70%; /* Set maximum widthdhdj */
+  margin: 0 auto; /* Center the slider horizontally */ 
+} 
+@media only screen and (max-width: 600px) {
+    .slick-slider {
+  width: 90%; /* Set maximum width */
+  margin: 0 auto; /* Center the slider horizontally */
+  padding-top: 5% auto;
+}
+.luxbar-fixed{
+  margin-bottom: 50%;
+}
+.luxbar-brand{
+        font-size: 8vw;
+      }
     }
+  @media only screen and (max-width:950px){
+    .luxbar-brand{
+        font-size: 100%;
+      }
+  }
 
-    ul {
-      list-style-type: none;
-      position: sticky;
-      overflow: auto;
-      font-weight: bold;
-    }
-
-    li {
-      display: inline-block;
-      font-size: 150%;
-      margin-right: 20px;
-    }
-
-    a {
-      text-decoration-line: none;
-      color: #c7c0ff;
-    }
     h1 {
       margin-top: 20px;
     }
 
-    .slideshow-container {
-      position: relative;
-      margin: auto;
-      overflow: hidden;
-    }
+/* Adjust size of images */
+.slick-slide img {
+  max-width: 100%; /* Limit image width to prevent overflow */
+  max-height: 80vh; /* Set maximum height relative to viewport height */
+  display: block; /* Ensure images are displayed as blocks */
+  margin: 0 auto; /* Center images horizontally within slides */
+}
 
-    .gallery-image {
-      display: none;
-      width: 100%;
-      height: auto;
-      transition: opacity 1.5s ease;
-    }
+.next-arrow{
+  right: -5%;
+  border-right: 0 solid transparent;
+  border-left: 0px  solid transparent;
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  background-color: transparent;
+  padding-left: 5%;
+  font-size: 30px;
+  color: white;
+}
 
-    .gallery-image.active {
-      display: block;
+.prev-arrow{
+left: -5%;
+  border-right: 0 solid transparent;
+  border-left: 0px  solid transparent;
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  background-color: transparent;
+  padding-right: 5%;
+  font-size: 30px;
+  color: white;
+}
+.slide-arrow{
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+}
+.fa {
+  font-size: 24px; /* Adjust the font size as needed */
+}
+.luxbar-fixed{
+  margin-bottom: 20%;
+}
+.luxbar-menu-material-green{
+      background-color: transparent;
     }
-
-    /* Navigation bar at the bottom */
-    .navigation-bar {
-      padding: 10px;
-      position: fixed;
-      bottom: 10%;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      z-index: 2;
-      background-color: rgba(0, 0, 0, 0); /* Transparent background */
-    }
-
-    /* Navigation arrows and pause button */
-    .prev, .pause, .next {
-      position: absolute;
-      font-size: 24px;
-      font-family: monospace;
-      cursor: pointer;
-      user-select: none;
-      color: #ffc0d9;
-      background-color: rgba(0, 0, 0, 0);
-      padding: 16px;
-      border: none;
-      z-index: 1; /* Ensure they are above the images */
-    }
-
-    .prev {
-      left: 24px; /* Adjusted to be 24px from the left */
-    }
-
-    .pause {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .next {
-      right: 24px; /* Adjusted to be 24px from the right */
-    }
-
-    /* Style for smaller screens */
-    @media only screen and (max-width: 600px) {
-      .slideshow-container {
-        max-width: 90%;
-        height: auto;
-        margin-top: 20px; /* Add some space at the top */
-      }
-
-      .gallery-image {
-        width: 100%; /* Full width for smaller screens */
-      }
-    }
-
-    /* Style for larger screens */
-    @media only screen and (min-width: 601px) {
-      .slideshow-container {
-        max-width: auto; /* Adjusted to 70% of the viewport width */
-        max-height: 70vh;
-        margin-top: 20px; /* Add some space at the top */
-      }
-    }
+.slick-slider{
+  margin-top: 5%;
+}
   </style>
 </head>
 
 <body>
-  <script>
-    // Check if the width of the window is below or equal to 600 pixels
-    if (window.innerWidth <= 600) {
-      // Add a class to the body for additional styling
-      document.body.classList.add('small-screen');
-    }
-  </script>
-
-  <header>
-    <h1><a href="index.html">ollie morris</a></h1>
-    <ul>
-      <li><a href="erp.html">erp</a></li>
-      <li>|</li>
-      <li><a href="uprooted.html">uprooted</a></li>
-      <li>|</li>
-      <li><a href="rolts.html">rolt's</a></li>
-      <li>|</li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
+  <header id="luxbar" class="luxbar-fixed">
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green">
+        <ul class="luxbar-navigation">
+            <li class="luxbar-header">
+                <a href="index.html" class="luxbar-brand">Ollie Morris</a>
+                <label class="luxbar-hamburger luxbar-hamburger-spin" 
+                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+            </li>
+            <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
+  
+            <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
+  
+            <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
+  
+            <li class="luxbar-item"><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
   </header>
 
-  <!-- Slideshow Container -->
-  <div class="slideshow-container">
-    <img src="rolts/L1002787.jpeg" alt="Image 1" class="gallery-image active">
-    <img src="rolts/L1002790.jpeg" alt="Image 2" class="gallery-image">
-    <img src="rolts/L1002794.jpeg" alt="Image 3" class="gallery-image">
-    <img src="rolts/L1002801.jpeg" alt="Image 4" class="gallery-image">
-    <img src="rolts/L1002811.jpeg" alt="Image 5" class="gallery-image">
-    <img src="rolts/L1002816.jpeg" alt="Image 6" class="gallery-image">
-    <img src="rolts/L1002819.jpeg" alt="Image 7" class="gallery-image">
-    <img src="rolts/L1002828.jpeg" alt="Image 8" class="gallery-image">
-    <img src="rolts/L1002839.jpeg" alt="Image 9" class="gallery-image">
-    <img src="rolts/L1002843.jpeg" alt="Image 10" class="gallery-image">
-    <img src="rolts/L1002860.jpeg" alt="Image 11" class="gallery-image">
-    <img src="rolts/L1002870.jpeg" alt="Image 12" class="gallery-image">
-    <!-- Add more images as needed -->
+  <!-- Slick Slider Container -->
+  <div class="slick-slider">
+    <!-- Add your images here -->
+    <!-- Replace the existing image elements with these div elements -->
+    <div><img src="rolts/L1002787.jpeg" alt="Image 1"></div>
+    <div><img src="rolts/L1002790.jpeg" alt="Image 2"></div>
+    <div><img src="rolts/L1002794.jpeg" alt="Image 3"></div>
+    <div><img src="rolts/L1002801.jpeg" alt="Image 4"></div>
+    <div><img src="rolts/L1002811.jpeg" alt="Image 5"></div>
+    <div><img src="rolts/L1002816.jpeg" alt="Image 6"></div>
+    <div><img src="rolts/L1002819.jpeg" alt="Image 7"></div>
+    <div><img src="rolts/L1002828.jpeg" alt="Image 8"></div>
+    <div><img src="rolts/L1002839.jpeg" alt="Image 9"></div>
+    <div><img src="rolts/L1002843.jpeg" alt="Image 10"></div>
+    <div><img src="rolts/L1002860.jpeg" alt="Image 11"></div>
+    <div><img src="rolts/L1002870.jpeg" alt="Image 12"></div>
+
+    
+    <!-- Add other images here -->
   </div>
 
-  <!-- Navigation bar at the bottom -->
-  <div class="navigation-bar">
-    <a class="pause" onclick="togglePause()">❚❚</a>
-    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-    <a class="next" onclick="changeSlide(1)">&#10095;</a>
-  </div>
-
-  <!-- Content specific to the "Work" page -->
-
-  <!-- Common footer if needed -->
-
-  <!-- JavaScript Section -->
-  <script src="slideshow.js" defer></script> <!-- Place the script tag here -->
+  <!-- Include Slick Slider JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.slick-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1750,
+        dots: false,
+        arrows: false,
+        speed: 250,
+        accessibility:true,
+        pauseOnFocus:true,
+        fade: true,
+        pauseOnHover:false,
+        cssEase: 'linear',
+        nextArrow: "<button class='slide-arrow next-arrow'><i class='fas fa-angle-right'></i></button>",
+        prevArrow: "<button class='slide-arrow prev-arrow'><i class='fas fa-angle-left'></i></button>"
+      });
+    });
+  </script>
 </body>
 
 </html>
