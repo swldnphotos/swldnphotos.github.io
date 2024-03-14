@@ -24,17 +24,37 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     /* Updated CSS for the Slick slider */
-.slick-slider {
+    .slick-slider {
   width: 70%; /* Set maximum widthdhdj */
   margin: 0 auto; /* Center the slider horizontally */ 
   margin-top: 5%;
 } 
-@media only screen and (max-width: 600px) {
+
+.slick-slide img {
+  max-width: 100%; /* Limit image width to prevent overflow */
+  max-height: 80vh; /* Set maximum height relative to viewport height */
+  display: block; /* Ensure images are displayed as blocks */
+  margin: 0 auto; /* Center images horizontally within slides */
+}
+
+.luxbar-fixed{
+  margin-bottom: 50%;
+}
+
+  @media only screen and (max-width:950px){
+    .luxbar-brand{
+        font-size: 100%;
+      }
+      .slick-slider{
+      margin-top: 10%;
+    }
+  }
+  @media only screen and (max-width: 600px) {
     .slick-slider {
   width: 90%; /* Set maximum width */
   margin: 0 auto; /* Center the slider horizontally */
   padding-top: 5% auto;
-  margin-top: 40%;
+  margin-top:40%;
 }
 .luxbar-brand{
         font-size: 8vw;
@@ -45,13 +65,9 @@
       margin-top: 20px;
     }
 
+
 /* Adjust size of images */
-.slick-slide img {
-  max-width: 100%; /* Limit image width to prevent overflow */
-  max-height: 80vh; /* Set maximum height relative to viewport height */
-  display: block; /* Ensure images are displayed as blocks */
-  margin: 0 auto; /* Center images horizontally within slides */
-}
+
 
 .next-arrow{
   right: -5%;
@@ -64,11 +80,6 @@
   font-size: 30px;
   color: white;
 }
-@media only screen and (max-width:950px){
-    .luxbar-brand{
-        font-size: 100%;
-      }
-  }
 
 .prev-arrow{
 left: -5%;

@@ -29,20 +29,18 @@
   margin: 0 auto; /* Center the slider horizontally */ 
   margin-top: 5%;
 } 
-@media only screen and (max-width: 600px) {
-    .slick-slider {
-  width: 90%; /* Set maximum width */
-  margin: 0 auto; /* Center the slider horizontally */
-  padding-top: 5% auto;
-  margin-top:40%;
+
+.slick-slide img {
+  max-width: 100%; /* Limit image width to prevent overflow */
+  max-height: 80vh; /* Set maximum height relative to viewport height */
+  display: block; /* Ensure images are displayed as blocks */
+  margin: 0 auto; /* Center images horizontally within slides */
 }
+
 .luxbar-fixed{
   margin-bottom: 50%;
 }
-.luxbar-brand{
-        font-size: 8vw;
-      }
-    }
+
   @media only screen and (max-width:950px){
     .luxbar-brand{
         font-size: 100%;
@@ -51,6 +49,17 @@
       margin-top: 10%;
     }
   }
+  @media only screen and (max-width: 600px) {
+    .slick-slider {
+  width: 90%; /* Set maximum width */
+  margin: 0 auto; /* Center the slider horizontally */
+  padding-top: 5% auto;
+  margin-top:40%;
+}
+.luxbar-brand{
+        font-size: 8vw;
+      }
+    }
 
     h1 {
       margin-top: 20px;
@@ -58,12 +67,7 @@
 
 
 /* Adjust size of images */
-.slick-slide img {
-  max-width: 100%; /* Limit image width to prevent overflow */
-  max-height: 80vh; /* Set maximum height relative to viewport height */
-  display: block; /* Ensure images are displayed as blocks */
-  margin: 0 auto; /* Center images horizontally within slides */
-}
+
 
 .next-arrow{
   right: -5%;
