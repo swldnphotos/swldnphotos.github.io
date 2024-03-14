@@ -47,11 +47,15 @@
     .luxbar-brand{
         font-size: 100%;
       }
+      .slick-slider{
+      margin-top: 10%;
+    }
   }
 
     h1 {
       margin-top: 20px;
     }
+
 
 /* Adjust size of images */
 .slick-slide img {
@@ -139,16 +143,18 @@ left: -5%;
     <div><img src="rolts/L1002843.jpeg" alt="Image 10"></div>
     <div><img src="rolts/L1002860.jpeg" alt="Image 11"></div>
     <div><img src="rolts/L1002870.jpeg" alt="Image 12"></div>
-
-    
     <!-- Add other images here -->
   </div>
+
+  <!-- Counter for slide number -->
+  <div id="slide-counter" style="color: #ffc0d9;"></div>
 
   <!-- Include Slick Slider JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
     $(document).ready(function(){
-      $('.slick-slider').slick({
+      // Initialize slick slider
+      var slickSlider = $('.slick-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
@@ -156,14 +162,38 @@ left: -5%;
         dots: false,
         arrows: false,
         speed: 250,
-        accessibility:true,
-        pauseOnFocus:true,
+        accessibility: true,
+        pauseOnFocus: true,
         fade: true,
-        pauseOnHover:false,
+        pauseOnHover: false,
         cssEase: 'linear',
         nextArrow: "<button class='slide-arrow next-arrow'><i class='fas fa-angle-right'></i></button>",
         prevArrow: "<button class='slide-arrow prev-arrow'><i class='fas fa-angle-left'></i></button>"
       });
+
+      // Update slide counter on slide change
+// Update slide counter on slide change
+      function updateSlideCounter(currentSlide) {
+        var slideCount = currentSlide + 1;
+        var totalSlides = slickSlider.slick('getSlick').slideCount;
+        $('#slide-counter').text(slideCount + '/' + totalSlides);
+      }
+
+
+      // Update slide counter after change
+      slickSlider.on('afterChange', function(event, slick, currentSlide){
+        updateSlideCounter(currentSlide);
+      });
+
+      // Update slide counter before change
+      slickSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        updateSlideCounter(nextSlide);
+      });
+
+      // Initial update of slide counter
+      var initialSlide = slickSlider.slick('slickCurrentSlide') + 1;
+      var totalSlides = slickSlider.slick('getSlick').slideCount;
+      $('#slide-counter').text(initialSlide + '/' + totalSlides);
     });
   </script>
 </body>
