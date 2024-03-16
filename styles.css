@@ -143,7 +143,7 @@ h1 {
 
 /* Luxbar hamburger menu icon */
 .luxbar-checkbox:checked + .luxbar-menu .luxbar-hamburger > span {
-  background-color: #c7c0ff; /* Match the hamburger icon color */
+  background-color: #ffc0d9; /* Match the hamburger icon color */
 }
 
 /* Luxbar hamburger menu icon on hover */
