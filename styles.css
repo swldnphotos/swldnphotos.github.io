@@ -155,3 +155,6 @@ h1 {
 .luxbar-checkbox:checked + .luxbar-menu .luxbar-hamburger > span:before {
   background-color: #ffc0d9; /* Match the hamburger icon color when active */
 }
+.luxbar-menu-material-green .luxbar-hamburger span, .luxbar-menu-material-green .luxbar-hamburger span::before, .luxbar-menu-material-green .luxbar-hamburger span::after {
+	background-color: #ffc0d9;
+}
