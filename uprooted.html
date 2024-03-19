@@ -38,7 +38,7 @@
       position: relative;
       height: 0;
       overflow: hidden;
-      margin-top: 5%;
+      margin-top: 10%;
     }
 
     iframe {
@@ -60,32 +60,7 @@
       background-color: transparent;
     }
 
-    @media only screen and (max-width:950px){
-    .luxbar-brand{
-        font-size: 100%;
-      }
-      .iframe-container{
-        margin-top: 20%;
-      }
-  }
 
-    /* Style for mobile devices */
-    @media only screen and (max-width: 600px) {
-      .iframe-container {
-        max-width: 95%;
-        padding-bottom: 65%;
-        margin-top: 40%;
-      }
-
-    }
-    @media only screen and (max-width: 600px) {
-      p{
-        font-size: 100%;
-      }
-      .luxbar-brand{
-        font-size: 8vw;
-      }
-    }
   /* Luxbar styles */
 .luxbar {
   background-color: #0d4200; /* Match the background color */
@@ -126,6 +101,38 @@
 .luxbar-checkbox:checked + .luxbar-menu .luxbar-hamburger > span:before {
   background-color: #ffc0d9; /* Match the hamburger icon color when active */
 }
+
+@media only screen and (max-width:950px){
+    .luxbar-brand{
+        font-size: 100%;
+      }
+      .iframe-container{
+        margin-top: 10%;
+      }
+      .iframe-container {
+
+	    padding-bottom: 70%;
+}
+      
+  }
+
+    /* Style for mobile devices */
+    @media only screen and (max-width: 600px) {
+      .iframe-container {
+        max-width: 95%;
+        padding-bottom: 65%;
+        margin-top: 40%;
+      }
+
+    }
+    @media only screen and (max-width: 600px) {
+      p{
+        font-size: 100%;
+      }
+      .luxbar-brand{
+        font-size: 8vw;
+      }
+    }
 
   </style>
 </head>
