@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,700;1,8..144,700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     body {
       text-align: center;
@@ -26,14 +27,14 @@
 
 
     p {
-      text-align: center;
+      text-align: left;
       /*margin-top: 20px; /* Adjust the margin to control the vertical position */
       font-size: 150%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      position: absolute; /* Added to fix the position */
+      justify-content: left;
+      position: relative; /* Added to fix the position */
       top: 50%; /* Positioned 20% from the bottom */
       width: 80%; /* Added to ensure full width */
       margin:10%;
@@ -68,6 +69,17 @@
         font-size: 8vw;
       }
     }
+
+    .fa-instagram{
+  font-size: 200%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.fa-envelope{
+  font-size: 200%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
   </style>
 </head>
 
@@ -94,19 +106,28 @@
   
             <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
   
-            <li class="luxbar-item"><a href="contact.html">Contact</a></li>
+            <li class="luxbar-item"><a href="contact.html">About</a></li>
         </ul>
     </div>
   </header>
   <!-- Content of the About page goes here -->
+  <p style="text-transform: none;">As a photographer, I explore the relationships between people and their environments, 
+    with a current focus on issues around access to rural areas,
+    themes of transition, mental health, and identity are central to my work.
+    I am also involved with the campaign for a Right to Roam in England and dedicate much of my time to helping further that goal.
+    As well as my enrollment on the Photography BA at UWE, I've had the opportunity to assist on shoots for publications including Harpers Bazaar Arabia and Luxiders magazine,
+    which has helped me build a strong set of skills integral to my work.</p>
   <div>
   <p>
     commissions and print sales available on request<br>
-    instagram:<a href="https://instagram.com/olliemorrisphotos" target="_blank">@olliemorrisphotos</a><br>
-    
-    email:<a href="mailto:olliewrmorris@gmail.com">olliewrmorris@gmail.com</a>
   </p>
   </div>
+      <!-- Add icon library -->
+<footer><a href="https://instagram.com/olliemorrisphotos" class="fa fa-instagram"></a>
+  <a href="mailto:olliewrmorris@gmail.com" class="fa fa-envelope"></a></footer>
+
+<!-- Add font awesome icons -->
+
 </body>
 
 </html>

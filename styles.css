@@ -158,3 +158,14 @@ h1 {
 .luxbar-menu-material-green .luxbar-hamburger span, .luxbar-menu-material-green .luxbar-hamburger span::before, .luxbar-menu-material-green .luxbar-hamburger span::after {
 	background-color: #ffc0d9;
 }
+
+.fa-instagram{
+  font-size: 200%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.fa-envelope{
+  font-size: 200%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
