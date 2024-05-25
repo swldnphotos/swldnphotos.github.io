@@ -23,23 +23,33 @@
   <!-- Include jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
+    :root{
+      --sliderWidth: 70%;
+    }
     /* Updated CSS for the Slick slider */
     .slick-slider {
-  width: 70%; /* Set maximum widthdhdj */
-  margin: 0 auto; /* Center the slider horizontally */ 
+  width: var(--sliderWidth); /* Set maximum widthdhdj */
+  margin: 0 auto; /* Center the slider horizontally */
   margin-top: 5%;
 } 
+
 
 .slick-slide img {
   max-width: 100%; /* Limit image width to prevent overflow */
   max-height: 80vh; /* Set maximum height relative to viewport height */
   display: block; /* Ensure images are displayed as blocks */
   margin: 0 auto; /* Center images horizontally within slides */
+  margin-bottom: 5%;
 }
 
 .luxbar-fixed{
   margin-bottom: 50%;
 }
+.fas {
+  display:none;
+}
+
+
 
   @media only screen and (max-width:950px){
     .luxbar-brand{
@@ -48,23 +58,40 @@
       .slick-slider{
       margin-top: 10%;
     }
+    .flexcontainer{
+      margin-top: 5%;
+    }
   }
   @media only screen and (max-width: 600px) {
     .slick-slider {
-  width: 90%; /* Set maximum width */
-  margin: 0 auto; /* Center the slider horizontally */
+
   padding-top: 5% auto;
-  margin-top:40%;
+  margin:5% auto;
+  margin-top:30%;
+  align-content: center;
+  width: calc(var(--sliderWidth)+20%) !important; 
+}
+.fas{
+  display:inline-block;
+}
+.slick-slide img {
+   width: 90%; /* Reset max-width */
+    /* Other styles */
+  }
+.backgroundInfo{
+  margin-right:-25%;
+  top: 100vh;
 }
 .luxbar-brand{
         font-size: 8vw;
       }
+      .slide-counter{
+        margin:1%
+      }
     }
-
     h1 {
       margin-top: 20px;
     }
-
 
 /* Adjust size of images */
 
@@ -107,6 +134,28 @@ left: -5%;
       background-color: transparent;
     }
 
+
+.backgroundInfo{
+  text-align: left;
+  align-content: flex-start;
+  text-align: left; 
+  text-transform: none;
+   justify-content: center; 
+   width: var(--sliderWidth);
+    margin: 5%; font-size: 120%;
+    margin:auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.slick-track {
+  display: flex;
+}
+.slick-track .slick-slide {
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
   </style>
 </head>
 
@@ -130,45 +179,56 @@ left: -5%;
         </ul>
     </div>
   </header>
-
-  <!-- Slick Slider Container -->
-  <div class="slick-slider">
-    <!-- Add your images here -->
-    <div><img src="ERP/Scan000.JPG" alt="Image 1"></div>
-    <div><img src="ERP/Scan001-2.JPG" alt="Image 2"></div>
-    <div><img src="ERP/Scan001.JPG" alt="Image 3"></div>
-    <div><img src="ERP/Scan001000.JPG" alt="Image 4"></div>
-    <div><img src="ERP/Scan002.JPG" alt="Image 5"></div>
-    <div><img src="ERP/Scan003.JPG" alt="Image 6"></div>
-    <div><img src="ERP/Scan004.JPG" alt="Image 7"></div>
-    <div><img src="ERP/Scan005-2.JPG" alt="Image 8"></div>
-    <div><img src="ERP/Scan005.JPG" alt="Image 9"></div>
-    <div><img src="ERP/Scan006.JPG" alt="Image 10"></div>
-    <div><img src="ERP/Scan007.JPG" alt="Image 11"></div>
-    <div><img src="ERP/Scan010.JPG" alt="Image 12"></div>
-    <div><img src="ERP/Scan012.JPG" alt="Image 13"></div>
-    <div><img src="ERP/Scan014.JPG" alt="Image 14"></div>
-    <div><img src="ERP/Scan017.JPG" alt="Image 15"></div>
-    <div><img src="ERP/Scan019.JPG" alt="Image 16"></div>
-    <div><img src="ERP/Scan020.JPG" alt="Image 17"></div>
-    <div><img src="ERP/Scan023-Edit.JPG" alt="Image 18"></div>
-    <div><img src="ERP/Scan028.JPG" alt="Image 19"></div>
-    <div><img src="ERP/Scan030.JPG" alt="Image 20"></div>
-    <div><img src="ERP/Scan1003.JPG" alt="Image 21"></div>
-    <div><img src="ERP/Scan3.JPG" alt="Image 22"></div>
-    <div><img src="ERP/Scan3002.JPG" alt="Image 23"></div>
-    <div><img src="ERP/Scan3007.JPG" alt="Image 24"></div>
-    <div><img src="ERP/Untitled1.JPG" alt="Image 25"></div>
-    <div><img src="ERP/Untitled10.JPG" alt="Image 26"></div>
-    <div><img src="ERP/Untitled17.JPG" alt="Image 27"></div>
-    <div><img src="ERP/Untitled7.JPG" alt="Image 28"></div>
-    <div><img src="ERP/Untitled9.JPG" alt="Image 29"></div>
-    
-    <!-- Add other images here -->
+  <div class="flex-container">
+    <div class="slick-slider">
+      <!-- Add your images here -->
+      <div><img src="ERP/Scan000.JPG" alt="Image 1"></div>
+      <div><img src="ERP/Scan001-2.JPG" alt="Image 2"></div>
+      <div><img src="ERP/Scan001.JPG" alt="Image 3"></div>
+      <div><img src="ERP/Scan001000.JPG" alt="Image 4"></div>
+      <div><img src="ERP/Scan002.JPG" alt="Image 5"></div>
+      <div><img src="ERP/Scan003.JPG" alt="Image 6"></div>
+      <div><img src="ERP/Scan004.JPG" alt="Image 7"></div>
+      <div><img src="ERP/Scan005-2.JPG" alt="Image 8"></div>
+      <div><img src="ERP/Scan005.JPG" alt="Image 9"></div>
+      <div><img src="ERP/Scan006.JPG" alt="Image 10"></div>
+      <div><img src="ERP/Scan007.JPG" alt="Image 11"></div>
+      <div><img src="ERP/Scan010.JPG" alt="Image 12"></div>
+      <div><img src="ERP/Scan012.JPG" alt="Image 13"></div>
+      <div><img src="ERP/Scan014.JPG" alt="Image 14"></div>
+      <div><img src="ERP/Scan017.JPG" alt="Image 15"></div>
+      <div><img src="ERP/Scan019.JPG" alt="Image 16"></div>
+      <div><img src="ERP/Scan020.JPG" alt="Image 17"></div>
+      <div><img src="ERP/Scan023-Edit.JPG" alt="Image 18"></div>
+      <div><img src="ERP/Scan028.JPG" alt="Image 19"></div>
+      <div><img src="ERP/Scan030.JPG" alt="Image 20"></div>
+      <div><img src="ERP/Scan1003.JPG" alt="Image 21"></div>
+      <div><img src="ERP/Scan3.JPG" alt="Image 22"></div>
+      <div><img src="ERP/Scan3002.JPG" alt="Image 23"></div>
+      <div><img src="ERP/Scan3007.JPG" alt="Image 24"></div>
+      <div><img src="ERP/Untitled1.JPG" alt="Image 25"></div>
+      <div><img src="ERP/Untitled10.JPG" alt="Image 26"></div>
+      <div><img src="ERP/Untitled17.JPG" alt="Image 27"></div>
+      <div><img src="ERP/Untitled7.JPG" alt="Image 28"></div>
+      <div><img src="ERP/Untitled9.JPG" alt="Image 29"></div>
+      
+      <!-- Add other images here -->
+    </div>
+    <p id="slide-counter" class="slide-counter" style="color: #ffc0d9; justify-content: flex-start; margin-top:auto;"></p>
+    <i class="fas fa-angle-double-down" style="color: white;"></i>
   </div>
+  <div class="flex-container">
+    <div>
+      <p class="backgroundInfo" style="text-align: justify;">E.R.P (exposure response prevention) is a project documenting my experiences of OCD and Agoraphobia
+      the name for the project came from the main treatment for OCD, which is can often be traumatic to go through, despite ultimately being the best treatment for the condition.<br>
+    The images were created on a series of journeys as part of my exposure therapy. Where I wasn't encountering people, the marks they had left on the places I was visiting told a story on their own.</p>
+    </div>
+  </div>
+  <!-- Slick Slider Container -->
+
   
   <!-- Slide Counter -->
-  <div id="slide-counter" class="slide-counter" style="color: #ffc0d9;"></div>
+ 
 
   <!-- Include Slick Slider JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
