@@ -101,6 +101,10 @@ h1 {
   z-index: 1; /* Ensure they are above the images */
 }
 
+.luxbar-fixed{
+  box-shadow:none;
+}
+
 .prev {
   left: 40%;
   color: #ffc0d9;
@@ -136,6 +140,7 @@ h1 {
 .luxbar-item a:hover {
   color: #d17097; /* Match the link color on hover */
 }
+
 
 .luxbar-brand a {
   color: white; /* Match the brand color */
