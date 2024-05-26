@@ -104,7 +104,9 @@ h1 {
 .luxbar-fixed{
   box-shadow:none;
 }
-
+.luxbar-navigation{
+  padding-bottom: 0.7%;
+}
 .prev {
   left: 40%;
   color: #ffc0d9;
