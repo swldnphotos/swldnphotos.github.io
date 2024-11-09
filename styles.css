@@ -1,6 +1,6 @@
 * {
   font-family: "Roboto Serif", serif;
-  background-color: #0d4200;
+  background-color: #b3ecff;
   text-align: center;
   text-transform: uppercase;
   margin: 0;
@@ -66,7 +66,7 @@ a:hover {
 
 a {
   text-decoration-line: none;
-  color: #c7c0ff;
+  color: #ffc0d9;
 }
 
 li a {
