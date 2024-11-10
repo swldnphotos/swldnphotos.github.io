@@ -1,6 +1,6 @@
 * {
   font-family: "Roboto Serif", serif;
-  background-color: #b3ecff;
+  background-color: #dbf6fe;
   text-align: center;
   text-transform: uppercase;
   margin: 0;
@@ -60,7 +60,7 @@ li {
   color:white;
 }
 
-a:hover {
+a:hover, .luxbar-menu a:hover {
   color: #d17097;
 }
 
@@ -146,6 +146,10 @@ h1 {
 
 .luxbar-brand a {
   color: white; /* Match the brand color */
+}
+
+.luxbar-menu a {
+  color: #ffc0d9
 }
 
 /* Luxbar hamburger menu icon */
