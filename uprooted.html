@@ -3,20 +3,17 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,700;1,8..144,700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
   <link rel="stylesheet" href="styles.css">
+
   <style>
-    * {
-      font-family: monospace;
-      font-weight: regular;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
     body {
       text-align: center;
-      background-color: #005d1b;
+
     }
 
     ul {
@@ -26,11 +23,9 @@
       font-weight: bold;
     }
 
-    li {
-      display: inline-block;
-      font-size: 150%;
-      margin-right: 20px;
-    }
+    h1 {
+      margin-top: 20px;
+    } 
 
     a {
       text-decoration-line: none;
@@ -38,12 +33,13 @@
     }
 
     .iframe-container {
-      max-width: 80%; /* Adjusted width for larger screens (desktops) */
+      max-height: 40%; /* Adjusted width for larger screens (desktops) */
       margin: auto; /* Center the container */
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      padding-bottom: 45%; /* 16:9 aspect ratio */
       position: relative;
       height: 0;
       overflow: hidden;
+      margin-top: 10%;
     }
 
     iframe {
@@ -54,31 +50,98 @@
       height: 100%;
     }
 
+
+    h1 {
+      margin-top: 20px;
+    }
+    .luxbar-fixed{
+  margin-bottom: 20%;
+}
+.luxbar-menu-material-green{
+      background-color: transparent;
+    }
+
+
+  /* Luxbar styles */
+.luxbar {
+  background-color: #0d4200; /* Match the background color */
+  font-family: "Roboto Serif", serif; /* Match the font-family */
+}
+
+
+
+
+/* Luxbar hamburger menu icon when active */
+.luxbar-checkbox:checked + .luxbar-menu .luxbar-hamburger > span:before {
+  background-color: #ffc0d9; /* Match the hamburger icon color when active */
+}
+@media only screen and (max-width:1700px){
+  .iframe-container{
+        margin-top: 5%;
+      }
+}
+
+@media only screen and (max-width:1200px){
+    .luxbar-brand{
+        font-size: 100%;
+      }
+      .iframe-container{
+        margin-top: 10%;
+      }
+      .iframe-container {
+
+	    padding-bottom: 60%;
+}
+      
+  }
+
     /* Style for mobile devices */
     @media only screen and (max-width: 600px) {
       .iframe-container {
         max-width: 95%;
+        padding-bottom: 65%;
+        margin-top: 40%;
+      }
+
+    }
+    @media only screen and (max-width: 600px) {
+      p{
+        font-size: 100%;
+      }
+      .luxbar-brand{
+        font-size: 8vw;
       }
     }
+
   </style>
 </head>
 
 <body>
-  <header>
-    <h1><a href="index.html">ollie morris</a></h1>
-    <ul>
-      <li><a href="erp.html">erp</a></li>
-      <li>|</li>
-      <li><a href="uprooted.html">uprooted</a></li>
-      <li>|</li>
-      <li><a href="rolts.html">rolt's</a></li>
-      <li>|</li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
+  <header id="luxbar" class="luxbar-fixed">
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green">
+        <ul class="luxbar-navigation">
+            <li class="luxbar-header">
+                <a href="index.html" class="luxbar-brand">Ollie Morris</a>
+                <label class="luxbar-hamburger luxbar-hamburger-spin" 
+                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+            </li>
+            <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
+  
+            <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
+  
+            <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
+
+            <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
+  
+            <li class="luxbar-item"><a href="contact.html">About</a></li>
+
+        </ul>
+    </div>
   </header>
 
   <div class="iframe-container">
-    <iframe src="https://player.vimeo.com/video/907604444?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Uprooted - Ollie Morris 2022"></iframe>
+    <iframe src="https://player.vimeo.com/video/907604444?badge=0&amp;autopause=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Uprooted - Ollie Morris 2022"></iframe>
   </div>
 
   <script src="https://player.vimeo.com/api/player.js"></script>

@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /private/
+Disallow: /temp/
+
+# Allow full access to all other pages
+Allow: /
+
+# Specific sitemap for better indexing
+Sitemap: https://olliemorris.photos/sitemap.xml

@@ -1,36 +1,41 @@
 * {
-    font-family: monospace;
-    font-weight: bold;
-    background-color: #005d1b;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  font-family: "Roboto Serif", serif;
+  background-color: #aed6e2;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
 }
+
+h1 {
+  font-family: "Roboto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+      "wdth" 100,
+      "GRAD" 0;
+}
+
 
 ul {
-    list-style-type: none;
-    text-align: center;
-    position: sticky;
-    margin: 0;
-    padding: 0;
-    overflow: auto;
-    font-weight: bold;
-}
-
-/* Your existing styles... */
-
-.slideshow-container {
-  position: relative;
-  max-width: 100%;
-  margin: auto;
+  list-style-type: none;
+  text-align: center;
+  position: sticky;
+  margin: 0;
+  padding: 0;
   overflow: auto;
+  font-weight: bold;
 }
 
 .slideshow-container {
   position: relative;
-  max-width: 50%; /* Set maximum width to 50% */
-  margin: auto;
+  margin: auto; /* Center the slideshow */
   overflow: hidden;
+  display: flex; /* Use flexbox for center alignment */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  max-width: 50%; /* Set maximum width to 50% */
 }
 
 .gallery-image {
@@ -40,13 +45,13 @@ ul {
   transition: opacity 1.5s ease; /* Smooth fade transition over 1.5 seconds */
 }
 
-
 .gallery-image.active {
   display: block; /* Display the active image immediately without transition */
 }
+
 p {
   font-weight: bold;
-  color: #ffc0d9;
+  color: #e8a0bd;
 }
 
 li {
@@ -55,13 +60,13 @@ li {
   color:white;
 }
 
-a:hover {
-  color: #c7c0ff;
+a:hover, .luxbar-menu a:hover {
+  /*color: #d17097;*/
 }
 
 a {
   text-decoration-line: none;
-  color: #c7c0ff;
+  color: #ffd2e4;
 }
 
 li a {
@@ -70,7 +75,7 @@ li a {
   display: block;
   padding: 10px;
   text-align: center;
-    color: #ffc0d9;
+  color: #e8a0bd;
 }
 
 h1 a {
@@ -83,13 +88,12 @@ h1 {
   padding: 0; /* Remove default padding */
 }
 
-/* ... Your existing styles ... */
-
 /* Navigation arrows and pause button */
 .prev, .pause, .next {
   position: absolute;
   font-size: 24px;
   cursor: pointer;
+  font-family: monospace;
   user-select: none;
   color: #ffc0d9;
   padding: 16px;
@@ -97,9 +101,15 @@ h1 {
   z-index: 1; /* Ensure they are above the images */
 }
 
+.luxbar-fixed{
+  box-shadow:none;
+}
+.luxbar-navigation{
+  padding-bottom: 0.7%;
+}
 .prev {
   left: 40%;
-    color: #ffc0d9;
+  color: #ffc0d9;
 }
 
 .pause {
@@ -111,4 +121,70 @@ h1 {
   right: 40%;
 }
 
-/* ... Your existing styles ... */
+/* Style for smaller screens */
+@media only screen and (max-width: 600px) {
+  .slideshow-container {
+      max-width: 90%;
+      height: auto;
+      margin-top: 20px; /* Add some space at the top */
+  }
+
+  .gallery-image {
+      width: 100%; /* Full width for smaller screens */
+  }
+}
+/* Luxbar styles */
+
+.luxbar-item a {
+  color: #c389a0; /* Change the text color to #ffc0d9 */
+}
+
+.luxbar-item a:hover {
+  /* color: #d17097; /* Match the link color on hover */
+  text-shadow: 0px 0px 2px #e8a0bd;
+}
+
+
+
+.luxbar-brand a {
+  color: white; /* Match the brand color */
+}
+
+.luxbar-menu a {
+  color: #e8a0bd;
+  text-shadow: #06181e;
+}
+
+/* Luxbar hamburger menu icon */
+.luxbar-checkbox:checked + .luxbar-menu .luxbar-hamburger > span {
+  background-color: #ffc0d9; /* Match the hamburger icon color */
+}
+
+/* Luxbar hamburger menu icon on hover */
+.luxbar-checkbox:checked + .luxbar-menu .luxbar-hamburger:hover > span {
+  background-color: #d17097; /* Match the hamburger icon color on hover */
+}
+
+/* Luxbar hamburger menu icon when active */
+.luxbar-checkbox:checked + .luxbar-menu .luxbar-hamburger > span:before {
+  background-color: #ffc0d9; /* Match the hamburger icon color when active */
+}
+.luxbar-menu-material-green .luxbar-hamburger span, .luxbar-menu-material-green .luxbar-hamburger span::before, .luxbar-menu-material-green .luxbar-hamburger span::after {
+	background-color: #ffc0d9;
+}
+
+.fa-instagram{
+  font-size: 200%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.fa-envelope{
+  font-size: 200%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.flex-container{
+  /*display: flex;
+  flex-direction: row;
+  */
+}

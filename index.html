@@ -2,8 +2,20 @@
 <html lang="en">
 
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,700;1,8..144,700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ollie Morris - Photographer and Student</title>
+  <meta name="description" content="Bristol based photographer">
+  <meta name="keywords" content="ollie morris, photographer, Bristol, portfolio, commissions, print sales, right to roam, analog, analogue, film photography, film, 35mm, large format, medium format photography, black and white">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://olliemorris.photos/index.html">
+  <meta property="og:title" content="Ollie Morris Photography - Portfolio">
+  <meta name="author" content="Ollie Morris">
+  <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
@@ -22,11 +34,6 @@
       font-weight: bold;
     }
 
-    li {
-      display: inline-block;
-      font-size: 150%;
-      margin-right: 20px;
-    }
 
     a {
       text-decoration-line: none;
@@ -39,23 +46,57 @@
       max-height: auto;
       display: block;
       margin: 0 auto;
-      margin-top: 20px;
+      margin-top: 5%;
     }
 
     p {
       font-size: 150%;
       margin: 10px;
-      color: #ffc0d9;
     }
+    .luxbar-menu-material-green{
+      background-color: transparent;
+    }
+    @media only screen and (max-width:950px){
+    .luxbar-brand{
+        font-size: 100%;
+      }
+  }
 
     /* Additional styles for small screens */
     @media only screen and (max-width: 600px) {
       img {
         width: 90%; /* Adjusted width for small screens (phones) */
+        margin-top: 30%;
+
+      }
+      .luxbar-brand{
+        font-size: 8vw;
       }
     }
   </style>
 </head>
+<header id="luxbar" class="luxbar-fixed">
+  <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+  <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green">
+      <ul class="luxbar-navigation">
+          <li class="luxbar-header">
+              <a href="index.html" class="luxbar-brand">Ollie Morris</a>
+              <label class="luxbar-hamburger luxbar-hamburger-spin" 
+              id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+          </li>
+          <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
+  
+          <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
+
+          <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
+
+          <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
+
+          <li class="luxbar-item"><a href="contact.html">About</a></li>
+
+      </ul>
+  </div>
+</header>
 
 <body>
   <script>
@@ -66,20 +107,8 @@
     }
   </script>
 
-  <h1><a href="index.html">ollie morris</a></h1>
-  <ul>
-    <li><a href="erp.html">erp</a></li>
-    <li>|</li>
-    <li><a href="uprooted.html">uprooted</a></li>
-    <li>|</li>
-    <li><a href="rolts.html">rolt's</a></li>
-    <li>|</li>
-    <li><a href="contact.html">contact</a></li>
-  </ul>
-  <!-- Content of the About page goes here -->
-
   <img src="./photos/image1.jpg" alt="Description of the image">
-  <p>photographer and student based in Bristol</p>
+  <p>Photographer based in Bristol</p>
 </body>
 
 </html>
