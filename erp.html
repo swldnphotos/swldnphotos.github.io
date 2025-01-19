@@ -3,187 +3,283 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,700;1,8..144,700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore ERP, a photographic project by Ollie Morris, focusing on the journey of dealing with OCD and finding healing through nature. Discover the marks left on nature by people who have never met.">
+  <meta name="keywords" content="erp, photographic project, OCD, nature, healing, nature photography, mental health, therapy, environment, marks in nature, Ollie Morris">
+  <meta name="author" content="Ollie Morris">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+
+  <title>ERP - A Photographic Project by Ollie Morris</title>
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- Add Slick CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <!-- Add Slick theme CSS (optional) -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
-    * {
-      font-family: monospace;
-      font-weight: regular;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root{
+      --sliderWidth: 70%;
     }
+    /* Updated CSS for the Slick slider */
+    .slick-slider {
+  width: var(--sliderWidth); /* Set maximum widthdhdj */
+  margin: 0 auto; /* Center the slider horizontally */
+  margin-top: 5%;
+} 
 
-    body {
-      text-align: center;
-    }
 
-    ul {
-      list-style-type: none;
-      position: sticky;
-      overflow: auto;
-      font-weight: bold;
-    }
+.slick-slide img {
+  max-width: 100%; /* Limit image width to prevent overflow */
+  max-height: 80vh; /* Set maximum height relative to viewport height */
+  display: block; /* Ensure images are displayed as blocks */
+  margin: 0 auto; /* Center images horizontally within slides */
+  margin-bottom: 5%;
+}
 
-    li {
-      display: inline-block;
-      font-size: 150%;
-      margin-right: 20px;
-    }
+.luxbar-fixed{
+  margin-bottom: 50%;
+}
+.fas {
+  display:none;
+}
 
-    a {
-      text-decoration-line: none;
-      color: #c7c0ff;
-    }
 
-    .slideshow-container {
-      position: relative;
-      margin: auto;
-      overflow: hidden;
-    }
 
-    .gallery-image {
-      display: none;
-      width: 100%;
-      height: auto;
-      transition: opacity 1.5s ease;
-    }
-
-    .gallery-image.active {
-      display: block;
-    }
-
-    /* Navigation bar at the bottom */
-    .navigation-bar {
-      padding: 10px;
-      position: fixed;
-      bottom: 10%;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      z-index: 2;
-      background-color: rgba(0, 0, 0, 0); /* Transparent background */
-    }
-
-    /* Navigation arrows and pause button */
-    .prev, .pause, .next {
-      position: absolute;
-      font-size: 24px;
-      cursor: pointer;
-      user-select: none;
-      color: #ffc0d9;
-      background-color: rgba(0, 0, 0, 0);
-      padding: 16px;
-      border: none;
-      z-index: 1; /* Ensure they are above the images */
-    }
-
-    .prev {
-      left: 24px; /* Adjusted to be 24px from the left */
-    }
-
-    .pause {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .next {
-      right: 24px; /* Adjusted to be 24px from the right */
-    }
-
-    /* Style for smaller screens */
-    @media only screen and (max-width: 600px) {
-      .slideshow-container {
-        max-width: 90%;
-        height: auto;
-        margin-top: 20px; /* Add some space at the top */
+  @media only screen and (max-width:950px){
+    .luxbar-brand{
+        font-size: 100%;
       }
+      .slick-slider{
+      margin-top: 10%;
+    }
+    .flexcontainer{
+      margin-top: 5%;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .slick-slider {
 
-      .gallery-image {
-        width: 100%; /* Full width for smaller screens */
+  padding-top: 5% auto;
+  margin:5% auto;
+  margin-top:30%;
+  align-content: center;
+  width: calc(var(--sliderWidth)+20%) !important; 
+}
+.fas{
+  display:inline-block;
+}
+.slick-slide img {
+   width: 90%; /* Reset max-width */
+    /* Other styles */
+  }
+.backgroundInfo{
+  margin-right:-25%;
+  top: 100vh;
+}
+.luxbar-brand{
+        font-size: 8vw;
+      }
+      .slide-counter{
+        margin:1%
       }
     }
-
-    /* Style for larger screens */
-    @media only screen and (min-width: 601px) {
-      .slideshow-container {
-        max-width: auto; /* Adjusted to 70% of the viewport width */
-        max-height: 70vh;
-        margin-top: 20px; /* Add some space at the top */
-      }
+    h1 {
+      margin-top: 20px;
     }
+
+/* Adjust size of images */
+
+
+.next-arrow{
+  right: -5%;
+  border-right: 0 solid transparent;
+  border-left: 0px  solid transparent;
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  background-color: transparent;
+  padding-left: 5%;
+  font-size: 30px;
+  color: white;
+}
+
+.prev-arrow{
+left: -5%;
+  border-right: 0 solid transparent;
+  border-left: 0px  solid transparent;
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  background-color: transparent;
+  padding-right: 5%;
+  font-size: 30px;
+  color: white;
+}
+.slide-arrow{
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+}
+.fa {
+  font-size: 24px; /* Adjust the font size as needed */
+}
+.luxbar-fixed{
+  margin-bottom: 20%;
+}
+.luxbar-menu-material-green{
+      background-color: transparent;
+    }
+
+
+.backgroundInfo{
+  text-align: left;
+  align-content: flex-start;
+  text-align: left; 
+  text-transform: none;
+   justify-content: center; 
+   width: var(--sliderWidth);
+    margin: 5%; font-size: 120%;
+    margin:auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.slick-track {
+  display: flex;
+}
+.slick-track .slick-slide {
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
   </style>
 </head>
 
 <body>
-  <script>
-    // Check if the width of the window is below or equal to 600 pixels
-    if (window.innerWidth <= 600) {
-      // Add a class to the body for additional styling
-      document.body.classList.add('small-screen');
-    }
-  </script>
+  <header id="luxbar" class="luxbar-fixed">
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green">
+        <ul class="luxbar-navigation">
+            <li class="luxbar-header">
+                <a href="index.html" class="luxbar-brand">Ollie Morris</a>
+                <label class="luxbar-hamburger luxbar-hamburger-spin" 
+                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+            </li>
+            <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
+  
+            <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
+  
+            <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
 
-  <header>
-    <h1><a href="index.html">ollie morris</a></h1>
-    <ul>
-      <li><a href="erp.html">erp</a></li>
-      <li>|</li>
-      <li><a href="uprooted.html">uprooted</a></li>
-      <li>|</li>
-      <li><a href="rolts.html">rolt's</a></li>
-      <li>|</li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
-  </header>
+            <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
+  
+            <li class="luxbar-item"><a href="contact.html">About</a></li>
 
-  <!-- Slideshow Container -->
-  <div class="slideshow-container">
-    <img src="ERP/Scan000.JPG" alt="Image 1" class="gallery-image active" loading="lazy">
-    <img src="ERP/Scan001-2.JPG" alt="Image 2" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan001.JPG" alt="Image 3" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan001000.JPG" alt="Image 4" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan002.JPG" alt="Image 5" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan003.JPG" alt="Image 6" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan004.JPG" alt="Image 7" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan005-2.JPG" alt="Image 8" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan005.JPG" alt="Image 9" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan006.JPG" alt="Image 10" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan007.JPG" alt="Image 11" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan010.JPG" alt="Image 12" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan012.JPG" alt="Image 13" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan014.JPG" alt="Image 14" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan017.JPG" alt="Image 15" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan019.JPG" alt="Image 16" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan020.JPG" alt="Image 17" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan023-Edit.JPG" alt="Image 18" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan028.JPG" alt="Image 19" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan030.JPG" alt="Image 20" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan1003.JPG" alt="Image 21" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan3.JPG" alt="Image 22" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan3002.JPG" alt="Image 23" class="gallery-image" loading="lazy">
-    <img src="ERP/Scan3007.JPG" alt="Image 24" class="gallery-image" loading="lazy">
-    <img src="ERP/Untitled1.JPG" alt="Image 25" class="gallery-image" loading="lazy">
-    <img src="ERP/Untitled10.JPG" alt="Image 26" class="gallery-image" loading="lazy">
-    <img src="ERP/Untitled17.JPG" alt="Image 27" class="gallery-image" loading="lazy">
-    <img src="ERP/Untitled7.JPG" alt="Image 28" class="gallery-image" loading="lazy">
-    <img src="ERP/Untitled9.JPG" alt="Image 29" class="gallery-image" loading="lazy">
-      <!-- Add more images as needed -->
+        </ul>
     </div>
-
-  <!-- Navigation bar at the bottom -->
-  <div class="navigation-bar">
-    <a class="pause" onclick="togglePause()">▶</a>
-    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </header>
+  <div class="flex-container">
+    <div class="slick-slider">
+      <!-- Add your images here -->
+      <div><img src="ERP/Scan000.JPG" alt="Image 1"></div>
+      <div><img src="ERP/Scan001-2.JPG" alt="Image 2"></div>
+      <div><img src="ERP/Scan001.JPG" alt="Image 3"></div>
+      <div><img src="ERP/Scan001000.JPG" alt="Image 4"></div>
+      <div><img src="ERP/Scan002.JPG" alt="Image 5"></div>
+      <div><img src="ERP/Scan003.JPG" alt="Image 6"></div>
+      <div><img src="ERP/Scan004.JPG" alt="Image 7"></div>
+      <div><img src="ERP/Scan005-2.JPG" alt="Image 8"></div>
+      <div><img src="ERP/Scan005.JPG" alt="Image 9"></div>
+      <div><img src="ERP/Scan006.JPG" alt="Image 10"></div>
+      <div><img src="ERP/Scan007.JPG" alt="Image 11"></div>
+      <div><img src="ERP/Scan010.JPG" alt="Image 12"></div>
+      <div><img src="ERP/Scan012.JPG" alt="Image 13"></div>
+      <div><img src="ERP/Scan014.JPG" alt="Image 14"></div>
+      <div><img src="ERP/Scan017.JPG" alt="Image 15"></div>
+      <div><img src="ERP/Scan019.JPG" alt="Image 16"></div>
+      <div><img src="ERP/Scan020.JPG" alt="Image 17"></div>
+      <div><img src="ERP/Scan023-Edit.JPG" alt="Image 18"></div>
+      <div><img src="ERP/Scan028.JPG" alt="Image 19"></div>
+      <div><img src="ERP/Scan030.JPG" alt="Image 20"></div>
+      <div><img src="ERP/Scan1003.JPG" alt="Image 21"></div>
+      <div><img src="ERP/Scan3.JPG" alt="Image 22"></div>
+      <div><img src="ERP/Scan3002.JPG" alt="Image 23"></div>
+      <div><img src="ERP/Scan3007.JPG" alt="Image 24"></div>
+      <div><img src="ERP/Untitled1.JPG" alt="Image 25"></div>
+      <div><img src="ERP/Untitled10.JPG" alt="Image 26"></div>
+      <div><img src="ERP/Untitled17.JPG" alt="Image 27"></div>
+      <div><img src="ERP/Untitled7.JPG" alt="Image 28"></div>
+      <div><img src="ERP/Untitled9.JPG" alt="Image 29"></div>
+      
+      <!-- Add other images here -->
+    </div>
+    <p id="slide-counter" class="slide-counter" style="color: #e8a0bd; justify-content: flex-start; margin-top:auto;"></p>
+    <i class="fas fa-angle-double-down" style="color: white;"></i>
   </div>
+  <div class="flex-container">
+    <div>
+      <p class="backgroundInfo" style="text-align: justify;">E.R.P (exposure response prevention) is a project documenting my experiences of OCD and Agoraphobia.
+      The name for the project came from the main treatment for OCD, which is can often be traumatic to go through, despite ultimately being the most effective way to help ease symptoms of the condition.
+    The images were created on a series of journeys as part of my exposure therapy. Where I wasn't encountering people, the marks they had left on the places I was visiting told stories on their own.</p>
+    </div>
+  </div>
+  <!-- Slick Slider Container -->
 
-  <!-- Content specific to the "Work" page -->
+  
+  <!-- Slide Counter -->
+ 
 
-  <!-- Common footer if needed -->
+  <!-- Include Slick Slider JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var slickSlider = $('.slick-slider');
+      
+      // Update slide counter on slide change
+      function updateSlideCounter(currentSlide) {
+        var slideCount = currentSlide + 1;
+        var totalSlides = slickSlider.slick('getSlick').slideCount;
+        $('#slide-counter').text(slideCount + '/' + totalSlides);
+      }
+      
+      // Initialize Slick Slider
+      slickSlider.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        dots: false,
+        arrows: false,
+        speed: 250,
+        accessibility:true,
+        pauseOnFocus:true,
+        fade: true,
+        pauseOnHover:false,
+        cssEase: 'linear',
+        nextArrow: "<button class='slide-arrow next-arrow'><i class='fas fa-angle-right'></i></button>",
+        prevArrow: "<button class='slide-arrow prev-arrow'><i class='fas fa-angle-left'></i></button>"
+      });
 
-  <!-- JavaScript Section -->
-  <script src="slideshow.js" defer></script> <!-- Place the script tag here -->
+      // Update slide counter after change
+      slickSlider.on('afterChange', function(event, slick, currentSlide){
+        updateSlideCounter(currentSlide);
+      });
+
+      // Update slide counter before change
+      slickSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        updateSlideCounter(nextSlide);
+      });
+
+      // Initial update of slide counter
+      var initialSlide = slickSlider.slick('slickCurrentSlide') + 1;
+      var totalSlides = slickSlider.slick('getSlick').slideCount;
+      $('#slide-counter').text(initialSlide + '/' + totalSlides);
+    });
+  </script>
 </body>
 
 </html>
