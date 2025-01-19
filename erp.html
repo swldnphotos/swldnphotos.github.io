@@ -182,10 +182,10 @@ left: -5%;
         </ul>
     </div>
   </header>
-  <div class="flex-container">
-    <div class="slick-slider">
+   <div class="flex-container">
+    <div class="slick-slider" >
       <!-- Add your images here -->
-      <div><img src="ERP/Scan000.JPG" alt="Image 1"></div>
+      <div><img src="ERP/Scan000.JPG" alt="Image 1" tabindex="0" id="slideshow-container"></div>
       <div><img src="ERP/Scan001-2.JPG" alt="Image 2"></div>
       <div><img src="ERP/Scan001.JPG" alt="Image 3"></div>
       <div><img src="ERP/Scan001000.JPG" alt="Image 4"></div>
@@ -227,13 +227,8 @@ left: -5%;
     The images were created on a series of journeys as part of my exposure therapy. Where I wasn't encountering people, the marks they had left on the places I was visiting told stories on their own.</p>
     </div>
   </div>
-  <!-- Slick Slider Container -->
-
-  
-  <!-- Slide Counter -->
- 
-
-  <!-- Include Slick Slider JavaScript -->
+    
+<!-- Include Slick Slider JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
     $(document).ready(function(){
@@ -278,8 +273,10 @@ left: -5%;
       var initialSlide = slickSlider.slick('slickCurrentSlide') + 1;
       var totalSlides = slickSlider.slick('getSlick').slideCount;
       $('#slide-counter').text(initialSlide + '/' + totalSlides);
+
+      // Focus on the slideshow container when the page loads
+      $('#slideshow-container').focus();
     });
   </script>
 </body>
-
 </html>
