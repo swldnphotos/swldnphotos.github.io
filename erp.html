@@ -186,7 +186,7 @@ left: -5%;
     </div>
   </header>
    <div class="flex-container">
-    <div class="slick-slider" >
+    <div class="slick-slider grid-view-container">
       <!-- Add your images here -->
       <div><img src="ERP/Scan000.JPG" alt="Image 1" tabindex="0" id="slideshow-container"></div>
       <div><img src="ERP/Scan001-2.JPG" alt="Image 2"></div>
@@ -298,7 +298,7 @@ left: -5%;
   
       // Click event handler for images
       function imageClickHandler(event) {
-        if ($('.slick-slider').hasClass('grid-view')) {
+        if ($('.grid-view-container').hasClass('grid-view')) {
           console.log('Grid view is activated, navigation prevented');
           return false; // Prevent navigation in grid view
         }
@@ -339,8 +339,9 @@ left: -5%;
   
       // Toggle grid view
       $('#grid-view-button').on('click', function() {
-        $('.slick-slider').toggleClass('grid-view');
-        if ($('.slick-slider').hasClass('grid-view')) {
+        $('.grid-view-container').toggleClass('grid-view');
+        console.log('grid-view class toggled:', $('.grid-view-container').hasClass('grid-view'));
+        if ($('.grid-view-container').hasClass('grid-view')) {
           console.log('Switching to grid view');
           slickSlider.slick('unslick');
           $('.slick-slider .slick-slide').css('opacity', '1'); // Ensure all images are visible
@@ -355,13 +356,13 @@ left: -5%;
           //slickSlider.slick('slickGoTo', 0, true); // Set current slide to the start
           //addImageClickListeners(); // Add click event listeners
           //$('#grid-view-button').text('Grid View');
-            location.reload(); // Refresh the page
+          location.reload(); // Refresh the page
         }
       });
   
       // Prevent slide transition in grid view
       slickSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        if ($('.slick-slider').hasClass('grid-view')) {
+        if ($('.grid-view-container').hasClass('grid-view')) {
           console.log('Slide transition prevented in grid view');
           event.preventDefault(); // Prevent slide transition
         }
