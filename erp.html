@@ -156,6 +156,9 @@ left: -5%;
   align-items: center;
   justify-content: center;
 }
+  .landscape {
+    padding-top: 25%;
+  }
   </style>
 </head>
 
@@ -217,7 +220,11 @@ left: -5%;
       
       <!-- Add other images here -->
     </div>
-    <p id="slide-counter" class="slide-counter" style="color: #e8a0bd; justify-content: flex-start; margin-top:auto;"></p>
+    <div class="controls">
+      <p id="slide-counter" class="slide-counter" style="color: #e8a0bd; justify-content: center; margin-top:auto;"></p>
+
+    </div>
+    <button id="grid-view-button" class="grid-view-button">Grid View</button>
     <i class="fas fa-angle-double-down" style="color: white;"></i>
   </div>
   <div class="flex-container">
@@ -239,44 +246,212 @@ left: -5%;
         var slideCount = currentSlide + 1;
         var totalSlides = slickSlider.slick('getSlick').slideCount;
         $('#slide-counter').text(slideCount + '/' + totalSlides);
+        console.log('Slide counter updated: ' + slideCount + '/' + totalSlides);
       }
       
       // Initialize Slick Slider
-      slickSlider.slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2500,
-        dots: false,
-        arrows: false,
-        speed: 250,
-        accessibility:true,
-        pauseOnFocus:true,
-        fade: true,
-        pauseOnHover:false,
-        cssEase: 'linear',
-        nextArrow: "<button class='slide-arrow next-arrow'><i class='fas fa-angle-right'></i></button>",
-        prevArrow: "<button class='slide-arrow prev-arrow'><i class='fas fa-angle-left'></i></button>"
-      });
-
-      // Update slide counter after change
-      slickSlider.on('afterChange', function(event, slick, currentSlide){
-        updateSlideCounter(currentSlide);
-      });
-
-      // Update slide counter before change
-      slickSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        updateSlideCounter(nextSlide);
-      });
-
-      // Initial update of slide counter
-      var initialSlide = slickSlider.slick('slickCurrentSlide') + 1;
-      var totalSlides = slickSlider.slick('getSlick').slideCount;
-      $('#slide-counter').text(initialSlide + '/' + totalSlides);
-
+      function initializeSlickSlider(autoplay = true) {
+        console.log('Initializing Slick Slider with autoplay: ' + autoplay);
+        slickSlider.slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: autoplay,
+          autoplaySpeed: 2500,
+          dots: false,
+          arrows: false,
+          speed: 250,
+          lazyload: 'progressive',
+          accessibility: true,
+          pauseOnFocus: true,
+          fade: true,
+          pauseOnHover: false,
+          cssEase: 'linear',
+          nextArrow: "<button class='slide-arrow next-arrow'><i class='fas fa-angle-right'></i></button>",
+          prevArrow: "<button class='slide-arrow prev-arrow'><i class='fas fa-angle-left'></i></button>"
+        });
+  
+        // Update slide counter after change
+        slickSlider.on('afterChange', function(event, slick, currentSlide){
+          console.log('afterChange event triggered');
+          updateSlideCounter(currentSlide);
+        });
+  
+        // Update slide counter before change
+        slickSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+          console.log('beforeChange event triggered');
+          updateSlideCounter(nextSlide);
+        });
+  
+        // Initial update of slide counter
+        var initialSlide = slickSlider.slick('slickCurrentSlide') + 1;
+        var totalSlides = slickSlider.slick('getSlick').slideCount;
+        $('#slide-counter').text(initialSlide + '/' + totalSlides);
+        console.log('Initial slide counter: ' + initialSlide + '/' + totalSlides);
+      }
+  
+      // Initial Slick Slider setup
+      initializeSlickSlider();
+  
       // Focus on the slideshow container when the page loads
-      $('#slideshow-container').focus();
+      $('#slideshow-container').focus().css('outline', 'none');
+      console.log('Slideshow container focused');
+  
+      // Click event handler for images
+      function imageClickHandler(event) {
+        if ($('.slick-slider').hasClass('grid-view')) {
+          console.log('Grid view is activated, navigation prevented');
+          return false; // Prevent navigation in grid view
+        }
+        var imageWidth = $(this).width();
+        var clickPosition = event.pageX - $(this).offset().left;
+        console.log('Image clicked at position: ' + clickPosition + ' of ' + imageWidth);
+        if (clickPosition < imageWidth / 2) {
+          console.log('Navigating to previous slide');
+          slickSlider.slick('slickPrev');
+        } else {
+          console.log('Navigating to next slide');
+          slickSlider.slick('slickNext');
+        }
+      }
+  
+      // Add click event listeners to images
+      function addImageClickListeners() {
+        $('.slick-slider img').on('click', imageClickHandler);
+        console.log('Click event listeners added to images');
+      }
+  
+      // Remove click event listeners from images
+      function removeImageClickListeners() {
+        $('.slick-slider img').off('click', imageClickHandler);
+        console.log('Click event listeners removed from images');
+      }
+  
+      // Set top padding for each image based on its aspect ratio
+      function setTopPaddingForImages() {
+        $('.slick-slider img').each(function() {
+          var imgWidth = $(this).width();
+          var imgHeight = $(this).height();
+          var topPadding = (imgWidth > imgHeight) ? '25%' : '0';
+          $(this).css('padding-top', topPadding);
+          console.log('Set top padding for image: ' + topPadding);
+        });
+      }
+  
+      // Toggle grid view
+      $('#grid-view-button').on('click', function() {
+        $('.slick-slider').toggleClass('grid-view');
+        if ($('.slick-slider').hasClass('grid-view')) {
+          console.log('Switching to grid view');
+          slickSlider.slick('unslick');
+          $('.slick-slider .slick-slide').css('opacity', '1'); // Ensure all images are visible
+          removeImageClickListeners(); // Remove click event listeners
+          setTopPaddingForImages(); // Set top padding for images
+          $('.backgroundInfo').css('display', 'none'); // Ensure all images are visible
+          $('.slide-counter').css('display', 'none'); // Ensure all images are visible
+          $('#grid-view-button').text('Slideshow View');
+        } else {
+          console.log('Switching to slideshow view');
+          //initializeSlickSlider(false); // Disable autoplay when reinitializing
+          //slickSlider.slick('slickGoTo', 0, true); // Set current slide to the start
+          //addImageClickListeners(); // Add click event listeners
+          //$('#grid-view-button').text('Grid View');
+            location.reload(); // Refresh the page
+        }
+      });
+  
+      // Prevent slide transition in grid view
+      slickSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        if ($('.slick-slider').hasClass('grid-view')) {
+          console.log('Slide transition prevented in grid view');
+          event.preventDefault(); // Prevent slide transition
+        }
+      });
+  
+      // Add initial click event listeners
+      addImageClickListeners();
     });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.grid-view img');
+    images.forEach(img => {
+      img.onload = function() {
+        if (img.naturalWidth > img.naturalHeight) {
+          img.classList.add('landscape');
+        }
+      };
+    });
+  });
   </script>
+
+  <style>
+    :root {
+      --images-per-row: 3; /* Default number of images per row */
+      --gap: 3%; /* Gap between images */
+    }
+
+    .grid-view {
+      display: grid;
+      grid-template-columns: repeat(var(--images-per-row), 1fr);
+      gap: var(--gap);
+      padding: 0 10vw; /* 10% padding on either side */
+      padding-top: 10%;
+    }
+    .grid-view .slick-slide {
+  box-sizing: border-box;
+  padding: calc(var(--gap) / 2);
+  display: flex;
+  align-items: center; /* Vertically centers the image */
+  justify-content: center;
+  overflow: hidden;
+}
+
+.grid-view img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Ensures the entire image is visible */
+}
+
+.grid-view element{
+  padding-top :25%;
+
+  
+}
+    @media (max-width: 1200px) {
+      :root {
+        --images-per-row: 3; /* Number of images per row for medium screens */
+      }
+    }
+    @media (max-width: 768px) {
+      :root {
+        --images-per-row: 2; /* Number of images per row for small screens */
+      }
+    }
+    @media (max-width: 480px) {
+      :root {
+        --images-per-row: 1; /* Number of images per row for extra small screens */
+      }
+    }
+
+    .controls {
+      justify-content: space-between;
+      align-items: center;
+    }
+    .grid-view-button {
+      background-color: #e8a0bd;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      position: fixed; /* Make the button fixed */
+      bottom: 20px; /* Position it at the bottom */
+      right: 20px; /* Position it at the right */
+      z-index: 1000; /* Ensure it is above other elements */
+    }
+    .grid-view .backgroundInfo,
+    .grid-view #slide-counter,
+    .grid-view .grid-view-button {
+      display: none; /* Hide text, slide counter, and button in grid view */
+    }
+  </style>
 </body>
 </html>
