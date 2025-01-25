@@ -190,33 +190,34 @@ left: -5%;
       <!-- Add your images here -->
       <div><img src="ERP/Scan000.JPG" alt="Image 1" tabindex="0" id="slideshow-container"></div>
       <div><img src="ERP/Scan001-2.JPG" alt="Image 2"></div>
-      <div><img src="ERP/Scan001.JPG" alt="Image 3"></div>
-      <div><img src="ERP/Scan001000.JPG" alt="Image 4"></div>
-      <div><img src="ERP/Scan002.JPG" alt="Image 5"></div>
-      <div><img src="ERP/Scan003.JPG" alt="Image 6"></div>
-      <div><img src="ERP/Scan004.JPG" alt="Image 7"></div>
-      <div><img src="ERP/Scan005-2.JPG" alt="Image 8"></div>
-      <div><img src="ERP/Scan005.JPG" alt="Image 9"></div>
-      <div><img src="ERP/Scan006.JPG" alt="Image 10"></div>
-      <div><img src="ERP/Scan007.JPG" alt="Image 11"></div>
-      <div><img src="ERP/Scan010.JPG" alt="Image 12"></div>
-      <div><img src="ERP/Scan012.JPG" alt="Image 13"></div>
-      <div><img src="ERP/Scan014.JPG" alt="Image 14"></div>
-      <div><img src="ERP/Scan017.JPG" alt="Image 15"></div>
-      <div><img src="ERP/Scan019.JPG" alt="Image 16"></div>
-      <div><img src="ERP/Scan020.JPG" alt="Image 17"></div>
-      <div><img src="ERP/Scan023-Edit.JPG" alt="Image 18"></div>
-      <div><img src="ERP/Scan028.JPG" alt="Image 19"></div>
-      <div><img src="ERP/Scan030.JPG" alt="Image 20"></div>
-      <div><img src="ERP/Scan1003.JPG" alt="Image 21"></div>
-      <div><img src="ERP/Scan3.JPG" alt="Image 22"></div>
-      <div><img src="ERP/Scan3002.JPG" alt="Image 23"></div>
-      <div><img src="ERP/Scan3007.JPG" alt="Image 24"></div>
-      <div><img src="ERP/Untitled1.JPG" alt="Image 25"></div>
-      <div><img src="ERP/Untitled10.JPG" alt="Image 26"></div>
-      <div><img src="ERP/Untitled17.JPG" alt="Image 27"></div>
-      <div><img src="ERP/Untitled7.JPG" alt="Image 28"></div>
-      <div><img src="ERP/Untitled9.JPG" alt="Image 29"></div>
+      <div><img data-lazy="ERP/Scan001.JPG" alt="Image 3"></div>
+      <div><img data-lazy="ERP/Scan001000.JPG" alt="Image 4"></div>
+      <div><img data-lazy="ERP/Scan002.JPG" alt="Image 5"></div>
+      <div><img data-lazy="ERP/Scan003.JPG" alt="Image 6"></div>
+      <div><img data-lazy="ERP/Scan004.JPG" alt="Image 7"></div>
+      <div><img data-lazy="ERP/Scan005-2.JPG" alt="Image 8"></div>
+      <div><img data-lazy="ERP/Scan005.JPG" alt="Image 9"></div>
+      <div><img data-lazy="ERP/Scan006.JPG" alt="Image 10"></div>
+      <div><img data-lazy="ERP/Scan007.JPG" alt="Image 11"></div>
+      <div><img data-lazy="ERP/Scan010.JPG" alt="Image 12"></div>
+      <div><img data-lazy="ERP/Scan012.JPG" alt="Image 13"></div>
+      <div><img data-lazy="ERP/Scan014.JPG" alt="Image 14"></div>
+      <div><img data-lazy="ERP/Scan017.JPG" alt="Image 15"></div>
+      <div><img data-lazy="ERP/Scan019.JPG" alt="Image 16"></div>
+      <div><img data-lazy="ERP/Scan020.JPG" alt="Image 17"></div>
+      <div><img data-lazy="ERP/Scan023-Edit.JPG" alt="Image 18"></div>
+      <div><img data-lazy="ERP/Scan028.JPG" alt="Image 19"></div>
+      <div><img data-lazy="ERP/Scan030.JPG" alt="Image 20"></div>
+      <div><img data-lazy="ERP/Scan1003.JPG" alt="Image 21"></div>
+      <div><img data-lazy="ERP/Scan3.JPG" alt="Image 22"></div>
+      <div><img data-lazy="ERP/Scan3002.JPG" alt="Image 23"></div>
+      <div><img data-lazy="ERP/Scan3007.JPG" alt="Image 24"></div>
+      <div><img data-lazy="ERP/Untitled1.JPG" alt="Image 25"></div>
+      <div><img data-lazy="ERP/Untitled10.JPG" alt="Image 26"></div>
+      <div><img data-lazy="ERP/Untitled17.JPG" alt="Image 27"></div>
+      <div><img data-lazy="ERP/Untitled7.JPG" alt="Image 28"></div>
+      <div><img data-lazy="ERP/Untitled9.JPG" alt="Image 29"></div>
+
       
       <!-- Add other images here -->
     </div>
@@ -250,12 +251,12 @@ left: -5%;
       }
       
       // Initialize Slick Slider
-      function initializeSlickSlider(autoplay = true) {
+      function initializeSlickSlider(autoplay = false) {
         console.log('Initializing Slick Slider with autoplay: ' + autoplay);
         slickSlider.slick({
           slidesToShow: 1,
           slidesToScroll: 1,
-          autoplay: autoplay,
+          autoplay: false,
           autoplaySpeed: 2500,
           dots: false,
           arrows: false,
@@ -396,6 +397,7 @@ left: -5%;
       gap: var(--gap);
       padding: 0 10vw; /* 10% padding on either side */
       padding-top: 10%;
+      padding-bottom:10%;
     }
     .grid-view .slick-slide {
   box-sizing: border-box;
@@ -430,6 +432,10 @@ left: -5%;
     @media (max-width: 480px) {
       :root {
         --images-per-row: 1; /* Number of images per row for extra small screens */
+        --gap: 1.5%;
+      }
+      .grid-view{
+        padding-top: 30%;
       }
     }
 
