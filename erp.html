@@ -341,16 +341,25 @@ left: -5%;
       // Toggle grid view
       $('#grid-view-button').on('click', function() {
         $('.grid-view-container').toggleClass('grid-view');
-        console.log('grid-view class toggled:', $('.grid-view-container').hasClass('grid-view'));
-        if ($('.grid-view-container').hasClass('grid-view')) {
-          console.log('Switching to grid view');
-          slickSlider.slick('unslick');
-          $('.slick-slider .slick-slide').css('opacity', '1'); // Ensure all images are visible
-          removeImageClickListeners(); // Remove click event listeners
-          setTopPaddingForImages(); // Set top padding for images
-          $('.backgroundInfo').css('display', 'none'); // Ensure all images are visible
-          $('.slide-counter').css('display', 'none'); // Ensure all images are visible
-          $('#grid-view-button').text('Slideshow View');
+    console.log('grid-view class toggled:', $('.grid-view-container').hasClass('grid-view'));
+    
+    if ($('.grid-view-container').hasClass('grid-view')) {
+        console.log('Switching to grid view');
+        
+        // Unslick the slider and reset styles
+
+        $('.slick-slider .slick-slide').css('opacity', '1'); // Ensure all images are visible
+        
+        // Remove lazy loading by replacing `data-lazy` with `src`
+        $('.slick-slider img[data-lazy]').each(function() {
+            $(this).attr('src', $(this).data('lazy')).removeAttr('data-lazy');
+        });
+        slickSlider.slick('unslick');
+        removeImageClickListeners(); // Remove click event listeners
+        setTopPaddingForImages(); // Set top padding for images
+        $('.backgroundInfo').css('display', 'none'); // Hide additional info
+        $('.slide-counter').css('display', 'none'); // Hide the slide counter
+        $('#grid-view-button').text('Slideshow View');
         } else {
           console.log('Switching to slideshow view');
           //initializeSlickSlider(false); // Disable autoplay when reinitializing
