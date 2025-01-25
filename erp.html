@@ -159,6 +159,130 @@ left: -5%;
   .landscape {
     padding-top: 25%;
   }
+
+  :root {
+    --images-per-row: 3; /* Default number of images per row */
+    --gap: 3%; /* Gap between images */
+  }
+
+  .grid-view {
+    display: grid;
+    grid-template-columns: repeat(var(--images-per-row), 1fr);
+    gap: var(--gap);
+    padding: 0 10vw; /* 10% padding on either side */
+    padding-top: 10%;
+    align-items: center;
+  }
+  .grid-view .slick-slide {
+    box-sizing: border-box;
+    padding: calc(var(--gap) / 2);
+    display: flex;
+    align-items: center; /* Vertically centers the image */
+    justify-content: center;
+    overflow: hidden;
+    padding-bottom: 10%;
+  }
+
+  .grid-view img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensures the entire image is visible */
+  }
+
+  .grid-view element {
+    padding-top: 25%;
+  }
+
+  @media (max-width: 1200px) {
+    :root {
+      --images-per-row: 3; /* Number of images per row for medium screens */
+    }
+  }
+  @media (max-width: 768px) {
+    :root {
+      --images-per-row: 2; /* Number of images per row for small screens */
+    }
+  }
+  @media (max-width: 480px) {
+    :root {
+      --images-per-row: 1; /* Number of images per row for extra small screens */
+      --gap: 0.5%;
+    }
+    .grid-view {
+      padding-top: 30%;
+    }
+  }
+
+  .controls {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .grid-view-button {
+    background-color: #e8a0bd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: fixed; /* Make the button fixed */
+    bottom: 20px; /* Position it at the bottom */
+    right: 20px; /* Position it at the right */
+    z-index: 1000; /* Ensure it is above other elements */
+  }
+  .grid-view .backgroundInfo,
+  .grid-view #slide-counter,
+  .grid-view .grid-view-button {
+    display: none; /* Hide text, slide counter, and button in grid view */
+  }
+
+  /* Modal styles */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    justify-content: center; /* Center the modal content */
+    align-items: center; /* Center the modal content */
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    background-color: transparent;
+  }
+
+  .modal img{
+    max-width: 80vw;
+    height: auto;
+    max-height: 80vh;
+    background-color: transparent;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color: transparent;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
   </style>
 </head>
 
@@ -261,7 +385,7 @@ left: -5%;
           dots: false,
           arrows: false,
           speed: 250,
-          lazyload: 'ondemand',
+          lazyLoad: 'ondemand',
           accessibility: true,
           pauseOnFocus: true,
           fade: true,
@@ -301,6 +425,8 @@ left: -5%;
       function imageClickHandler(event) {
         if ($('.grid-view-container').hasClass('grid-view')) {
           console.log('Grid view is activated, navigation prevented');
+          modal.css('display', 'flex');
+          modalImg.attr('src', this.src);
           return false; // Prevent navigation in grid view
         }
         var imageWidth = $(this).width();
@@ -366,7 +492,7 @@ left: -5%;
             $(this).attr('src', $(this).data('lazy')).removeAttr('data-lazy');
         });
         slickSlider.slick('unslick');
-        removeImageClickListeners(); // Remove click event listeners
+        //removeImageClickListeners(); // Remove click event listeners
         //setTopPaddingForImages(); // Set top padding for images
         //addLoadEventListener(); // Add load event listener
         $('.backgroundInfo').css('display', 'none'); // Hide additional info
@@ -392,6 +518,32 @@ left: -5%;
   
       // Add initial click event listeners
       addImageClickListeners();
+
+      // Spotlight view functionality
+      var modal = $('#myModal');
+      var modalImg = $('#img01');
+      var closeBtn = $('.close');
+    
+      // Open modal on image click
+      $('.grid-view-container').on('click', 'img', function() {
+        console.log('Image clicked in grid view');
+        if ($('.grid-view-container').hasClass('grid-view')) {
+          modal.css('display', 'flex');
+          modalImg.attr('src', this.src);
+        }
+      });
+    
+      // Close modal on close button click
+      closeBtn.on('click', function() {
+        modal.css('display', 'none');
+      });
+    
+      // Close modal on click outside of the image
+      modal.on('click', function(event) {
+        if (event.target === modal[0]) {
+          modal.css('display', 'none');
+        }
+      });
     });
 
   document.addEventListener("DOMContentLoaded", function() {
@@ -406,82 +558,12 @@ left: -5%;
   });
   </script>
 
-  <style>
-    :root {
-      --images-per-row: 3; /* Default number of images per row */
-      --gap: 3%; /* Gap between images */
-    }
-
-    .grid-view {
-      display: grid;
-      grid-template-columns: repeat(var(--images-per-row), 1fr);
-      gap: var(--gap);
-      padding: 0 10vw; /* 10% padding on either side */
-      padding-top: 10%;
-      align-items: center;
-    }
-    .grid-view .slick-slide {
-  box-sizing: border-box;
-  padding: calc(var(--gap) / 2);
-  display: flex;
-  align-items: center; /* Vertically centers the image */
-  justify-content: center;
-  overflow: hidden;
-  padding-bottom: 10%;
-}
-
-.grid-view img {
-  width: 100%;
-  height: auto;
-  object-fit: contain; /* Ensures the entire image is visible */
-
-}
-
-.grid-view element{
-  padding-top :25%;
-
-  
-}
-    @media (max-width: 1200px) {
-      :root {
-        --images-per-row: 3; /* Number of images per row for medium screens */
-      }
-    }
-    @media (max-width: 768px) {
-      :root {
-        --images-per-row: 2; /* Number of images per row for small screens */
-      }
-    }
-    @media (max-width: 480px) {
-      :root {
-        --images-per-row: 1; /* Number of images per row for extra small screens */
-        --gap: 1.5%;
-      }
-      .grid-view{
-        padding-top: 30%;
-      }
-    }
-
-    .controls {
-      justify-content: space-between;
-      align-items: center;
-    }
-    .grid-view-button {
-      background-color: #e8a0bd;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      position: fixed; /* Make the button fixed */
-      bottom: 20px; /* Position it at the bottom */
-      right: 20px; /* Position it at the right */
-      z-index: 1000; /* Ensure it is above other elements */
-    }
-    .grid-view .backgroundInfo,
-    .grid-view #slide-counter,
-    .grid-view .grid-view-button {
-      display: none; /* Hide text, slide counter, and button in grid view */
-    }
-  </style>
+  <!-- Add this inside the body tag -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img id="img01" alt="Spotlight Image">
+    </div>
+  </div>
 </body>
 </html>

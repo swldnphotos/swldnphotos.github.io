@@ -5,6 +5,8 @@
   text-transform: uppercase;
   margin: 0;
   padding: 0;
+  cursor: url("./cursor.png") 45 45, pointer;
+
 }
 
 h1 {
