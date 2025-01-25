@@ -343,7 +343,7 @@ left: -5%;
         $('.grid-view-container img').each(function() {
           var imgWidth = $(this).width();
           var imgHeight = $(this).height();
-          var topPadding = (imgWidth > imgHeight) ? '25%' : '0px';
+          var topPadding = (imgWidth > imgHeight) ? 0.25*imgHeight : '0px';
           $(this).css('padding-top', topPadding);
           console.log('Set top padding for image: ' + topPadding);
         });
@@ -367,8 +367,8 @@ left: -5%;
         });
         slickSlider.slick('unslick');
         removeImageClickListeners(); // Remove click event listeners
-        setTopPaddingForImages(); // Set top padding for images
-        addLoadEventListener(); // Add load event listener
+        //setTopPaddingForImages(); // Set top padding for images
+        //addLoadEventListener(); // Add load event listener
         $('.backgroundInfo').css('display', 'none'); // Hide additional info
         $('.slide-counter').css('display', 'none'); // Hide the slide counter
         $('#grid-view-button').text('Slideshow View');
@@ -418,7 +418,7 @@ left: -5%;
       gap: var(--gap);
       padding: 0 10vw; /* 10% padding on either side */
       padding-top: 10%;
-
+      align-items: center;
     }
     .grid-view .slick-slide {
   box-sizing: border-box;
@@ -434,6 +434,7 @@ left: -5%;
   width: 100%;
   height: auto;
   object-fit: contain; /* Ensures the entire image is visible */
+
 }
 
 .grid-view element{
