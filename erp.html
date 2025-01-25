@@ -326,13 +326,24 @@ left: -5%;
         $('.slick-slider img').off('click', imageClickHandler);
         console.log('Click event listeners removed from images');
       }
-  
+      function addLoadEventListener() {
+      $('.grid-view-container img').on('load', function() {
+        var img = $(this);
+        if (img.closest('.grid-view-container').length) {
+          var imgWidth = img[0].naturalWidth;
+          var imgHeight = img[0].naturalHeight;
+          var topPadding = (imgWidth > imgHeight) ? '25%' : '0';
+          img.css('padding-top', topPadding);
+          console.log('Set top padding for image on load: ' + topPadding + ' (Width: ' + imgWidth + ', Height: ' + imgHeight + ')');
+        }
+      });
+    }
       // Set top padding for each image based on its aspect ratio
       function setTopPaddingForImages() {
-        $('.slick-slider img').each(function() {
+        $('.grid-view-container img').each(function() {
           var imgWidth = $(this).width();
           var imgHeight = $(this).height();
-          var topPadding = (imgWidth > imgHeight) ? '25%' : '0';
+          var topPadding = (imgWidth > imgHeight) ? '25%' : '0px';
           $(this).css('padding-top', topPadding);
           console.log('Set top padding for image: ' + topPadding);
         });
@@ -357,6 +368,7 @@ left: -5%;
         slickSlider.slick('unslick');
         removeImageClickListeners(); // Remove click event listeners
         setTopPaddingForImages(); // Set top padding for images
+        addLoadEventListener(); // Add load event listener
         $('.backgroundInfo').css('display', 'none'); // Hide additional info
         $('.slide-counter').css('display', 'none'); // Hide the slide counter
         $('#grid-view-button').text('Slideshow View');
@@ -406,7 +418,7 @@ left: -5%;
       gap: var(--gap);
       padding: 0 10vw; /* 10% padding on either side */
       padding-top: 10%;
-      padding-bottom:10%;
+
     }
     .grid-view .slick-slide {
   box-sizing: border-box;
@@ -415,6 +427,7 @@ left: -5%;
   align-items: center; /* Vertically centers the image */
   justify-content: center;
   overflow: hidden;
+  padding-bottom: 10%;
 }
 
 .grid-view img {
