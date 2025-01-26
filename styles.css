@@ -1,12 +1,15 @@
 * {
   font-family: "Roboto Serif", serif;
-  background-color: #aed6e2;
+  background-color: #c0dfe8;
   text-align: center;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
-  cursor: url("./cursor.png") 45 45, pointer;
+  cursor: url("./cursor.png") 45 70, url("./cursor.png"), auto; ; /* Ensure default cursor for all elements */
+}
 
+h1, p, a, li, span, div {
+  cursor: url("./cursor.png") 45 70, url("./cursor.png"), auto; /* Ensure custom cursor for text elements */
 }
 
 h1 {
@@ -19,7 +22,6 @@ h1 {
       "GRAD" 0;
 }
 
-
 ul {
   list-style-type: none;
   text-align: center;
@@ -29,6 +31,8 @@ ul {
   overflow: auto;
   font-weight: bold;
 }
+
+
 
 .slideshow-container {
   position: relative;
@@ -59,17 +63,31 @@ p {
 li {
   display: inline-block;
   font-size: 150%;
-  color:white;
+  color: white;
 }
 
 a:hover, .luxbar-menu a:hover {
-  /*color: #d17097;*/
+  text-shadow: 1px 1px 2px #000000, -1px -1px 2px #ffffff; /* Embossed effect on hover */
+  cursor: url("./hatUp.png") 45 45, auto; /* Custom cursor on hover */
+}
+
+a:hover{
+  cursor: url("./hatUp.png") 45 45, auto; /* Custom cursor on hover */
+}
+
+.luxbar-item, .luxbar-item a, .luxbar-item a:hover {
+  cursor: url("./hatUp.png") 45 45, auto; /* Custom cursor on hover */
 }
 
 a {
   text-decoration-line: none;
   color: #ffd2e4;
 }
+
+p:hover, img:hover{
+  cursor: url("./hatUp.png") 45 45, auto; /* Custom cursor on hover */
+}
+
 
 li a {
   margin-right: auto;
@@ -94,7 +112,7 @@ h1 {
 .prev, .pause, .next {
   position: absolute;
   font-size: 24px;
-  cursor: pointer;
+  cursor: url("./cursor.png") 45 45, url("./cursor.png"), auto;
   font-family: monospace;
   user-select: none;
   color: #ffc0d9;
@@ -103,12 +121,14 @@ h1 {
   z-index: 1; /* Ensure they are above the images */
 }
 
-.luxbar-fixed{
-  box-shadow:none;
+.luxbar-fixed {
+  box-shadow: none;
 }
-.luxbar-navigation{
+
+.luxbar-navigation {
   padding-bottom: 0.7%;
 }
+
 .prev {
   left: 40%;
   color: #ffc0d9;
@@ -126,35 +146,36 @@ h1 {
 /* Style for smaller screens */
 @media only screen and (max-width: 600px) {
   .slideshow-container {
-      max-width: 90%;
-      height: auto;
-      margin-top: 20px; /* Add some space at the top */
+    max-width: 90%;
+    height: auto;
+    margin-top: 20px; /* Add some space at the top */
   }
 
   .gallery-image {
-      width: 100%; /* Full width for smaller screens */
+    width: 100%; /* Full width for smaller screens */
   }
 }
+
 /* Luxbar styles */
 
 .luxbar-item a {
   color: #c389a0; /* Change the text color to #ffc0d9 */
+  text-shadow: -1px -1px 2px #000000, 1px 1px 2px #ffffff; /* Embossed effect */
 }
 
 .luxbar-item a:hover {
-  /* color: #d17097; /* Match the link color on hover */
-  text-shadow: 0px 0px 2px #e8a0bd;
+  text-shadow: 1px 1px 2px #000000, -1px -1px 2px #ffffff; /* Embossed effect on hover */
+  cursor: url("./hatUp.png") 45 45, auto; /* Custom cursor on hover */
 }
-
-
 
 .luxbar-brand a {
   color: white; /* Match the brand color */
+  text-shadow: -1px -1px 2px #000000, 1px 1px 2px #ffffff; /* Embossed effect */
 }
 
 .luxbar-menu a {
   color: #e8a0bd;
-  text-shadow: #06181e;
+  text-shadow: -1px -1px 2px #000000, 1px 1px 2px #ffffff; /* Embossed effect */
 }
 
 /* Luxbar hamburger menu icon */
@@ -171,22 +192,23 @@ h1 {
 .luxbar-checkbox:checked + .luxbar-menu .luxbar-hamburger > span:before {
   background-color: #ffc0d9; /* Match the hamburger icon color when active */
 }
-.luxbar-menu-material-green .luxbar-hamburger span, .luxbar-menu-material-green .luxbar-hamburger span::before, .luxbar-menu-material-green .luxbar-hamburger span::after {
-	background-color: #ffc0d9;
+
+.luxbar-menu-material-green .luxbar-hamburger span,
+.luxbar-menu-material-green .luxbar-hamburger span::before,
+.luxbar-menu-material-green .luxbar-hamburger span::after {
+  background-color: #ffc0d9;
 }
 
-.fa-instagram{
+.fa-instagram {
   font-size: 200%;
   margin-left: 5%;
   margin-right: 5%;
 }
-.fa-envelope{
+
+.fa-envelope {
   font-size: 200%;
   margin-left: 5%;
   margin-right: 5%;
 }
-.flex-container{
-  /*display: flex;
-  flex-direction: row;
-  */
-}
+
+

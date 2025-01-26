@@ -22,7 +22,8 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      cursor: url("./cursor.png"), pointer;
+      cursor: url("./cursor.png") 45 45, pointer;
+      text-shadow: -1px -1px 2px #000000, 1px 1px 2px #ffffff; /* Inverted embossed effect */
     }
 
     h1 {
@@ -74,27 +75,30 @@
         font-size: 8vw;
       }
     }
+    .prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+p:hover{
+  cursor: url("./hatUp.png") 45 45, auto; /* Custom cursor on hover */
+}
   </style>
 </head>
 <header id="luxbar" class="luxbar-fixed">
   <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
-  <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green">
+  <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green prevent-select">
       <ul class="luxbar-navigation">
           <li class="luxbar-header">
               <a href="index.html" class="luxbar-brand">Ollie Morris</a>
               <label class="luxbar-hamburger luxbar-hamburger-spin" 
               id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
           </li>
-          <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
-  
-          <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
-
-          <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
-
           <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
-
+          <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
+          <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
+          <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
           <li class="luxbar-item"><a href="contact.html">About</a></li>
-
       </ul>
   </div>
 </header>
