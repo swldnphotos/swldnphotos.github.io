@@ -232,15 +232,145 @@
     li {
       background-color: transparent;
     }
+    .luxbar-fixed {
+      display: none; /* Hide luxbar by default */
+    }
+
+    .luxbar-menu-material-green {
+      background-color: #c0dfe8;
+    }
+
+    @media only screen and (max-width: 1700px) {
+      .iframe-container {
+        margin-top: 5%;
+      }
+    }
+
+    @media only screen and (max-width: 1200px) {
+      .luxbar-brand {
+        font-size: 100%;
+      }
+
+      .iframe-container {
+        margin-top: 10%;
+        padding-bottom: 60%;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .iframe-container {
+        max-width: 95%;
+        padding-bottom: 65%;
+        margin-top: 40%;
+      }
+
+      p {
+        font-size: 100%;
+      }
+
+      .luxbar-brand {
+        font-size: 8vw;
+      }
+
+      .luxbar-fixed {
+        display: block; /* Show luxbar on mobile view */
+      }
+    }
+
+    /* New CSS for fixed header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      padding: 10px;
+      z-index: 1000;
+      background-color: transparent;
+    }
+
+    header ul {
+      list-style-type: none;
+      padding: 0;
+      padding-left: 5%;
+      background-color: transparent;
+    }
+
+    header ul li {
+      margin: 10px 0;
+      background-color: transparent;
+    }
+
+    header ul li a {
+      text-decoration: none;
+      text-align: left;
+      background-color: transparent;
+    }
+
+    li a {
+      font-family: "owners-wide", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      background-color: transparent;
+    }
+
+    h1 {
+      text-align: left;
+      text-transform: uppercase;
+      background-color: transparent;
+    }
+
+    li {
+      background-color: transparent;
+    }
+    div.LabeledButton_module_box__2e0341f7:nth-child(3) > button:nth-child(2) {
+display: none;
+}
+
+    header ul {
+      display: block; /* Show the desktop navigation by default */
+    }
+
+    .luxbar-fixed {
+      display: none; /* Hide the mobile navigation by default */
+    }
+
+    @media only screen and (max-width: 600px) {
+      header ul {
+        display: none; /* Hide the desktop navigation on small screens */
+      }
+
+      .luxbar-fixed {
+        display: block; /* Show the mobile navigation on small screens */
+      }
+    }
+  @media only screen and (max-width: 1200px) {
+    .container {
+      margin: 10% auto; /* Adjusted margin for medium screens */
+      max-width: 90%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .container {
+      margin: 25% auto; /* Adjusted margin for small screens */
+      max-width: 90%;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .container {
+      margin: 30% auto; /* Adjusted margin for extra small screens */
+      max-width: 90%;
+    }
+  }
+
   </style>
 </head>
 
 <body>
   <header>
     <ul>
-      <h1>
-        <li></li><a href="index.html">Ollie Morris</a></li>
-      </h1>
+      <h1><li></li><a href="index.html">Ollie Morris</a></li></h1>
       <li><a href="howToTrespass.html">How to Trespass</a></li>
       <li><a href="erp.html">E.R.P</a></li>
       <li><a href="uprooted.html">Uprooted</a></li>
@@ -248,6 +378,25 @@
       <li><a href="contact.html">About</a></li>
     </ul>
   </header>
+  <header id="luxbar" class="luxbar-fixed">
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green">
+      <ul class="luxbar-navigation">
+        <li class="luxbar-header">
+          <a href="index.html" class="luxbar-brand">Ollie Morris</a>
+          <label class="luxbar-hamburger luxbar-hamburger-spin" id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+        </li>
+        <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
+        <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
+        <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
+        <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
+        <li class="luxbar-item"><a href="contact.html">About</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="container">
+    <div id="player" data-plyr-provider="vimeo" data-plyr-embed-id="907604444"></div>
+  </div>
   <script>
     // Check if the width of the window is below a certain threshold (e.g., 600px)
     if (window.innerWidth <= 600) {

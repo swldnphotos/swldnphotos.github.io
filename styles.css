@@ -33,7 +33,12 @@ ul {
   overflow: auto;
   font-weight: bold;
 }
-
+.luxbar-menu-material-green .luxbar-item:hover {
+  background-color:rgba(192, 223, 232, 1);
+}
+.luxbar-menu-material-green {
+  background-color: #c0dfe8;
+}
 .slideshow-container {
   position: relative;
   margin: auto; /* Center the slideshow */
