@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
 
-  <title>Rolts - A Photographic Project by Ollie Morris</title>
+  <title>ERP - A Photographic Project by Ollie Morris</title>
   <link rel="stylesheet" href="styles.css">
   
   <!-- Add Slick CSS -->
@@ -291,7 +291,7 @@ left: -5%;
   .close:focus {
     color: #bbb;
     text-decoration: none;
-    /*cursor: pointer;*/
+    cursor: pointer;
   }
 
   /* New CSS for fixed header */
@@ -368,12 +368,15 @@ left: -5%;
         background-color: rgba(192, 223, 232, 0.9);
       }
       menu-material-green .luxbar-item:hover {
-  background-color: rgba(192, 223, 232, 0.9);
-}
+      background-color: rgba(192, 223, 232, 0.9);
+      } 
+      
     }
     .luxbar-menu-material-green .active,
 .luxbar-menu-material-green .luxbar-item:hover {
   background-color:rgba(192, 223, 232, 0.9);
+}
+
 }
 
   </style>
@@ -406,37 +409,7 @@ left: -5%;
       </ul>
     </div>
   </header>
-   <div class="flex-container">
-    <div class="slick-slider grid-view-container">
-      <!-- Add your images here -->
-      <div><img src="rolts/L1002787.jpeg" alt="Image 1" tabindex="0" id="slideshow-container"></div>
-      <div><img src="rolts/L1002790.jpeg" alt="Image 2"></div>
-      <div><img data-lazy="rolts/L1002794.jpeg" alt="Image 3"></div>
-      <div><img data-lazy="rolts/L1002801.jpeg" alt="Image 4"></div>
-      <div><img data-lazy="rolts/L1002811.jpeg" alt="Image 5"></div>
-      <div><img data-lazy="rolts/L1002816.jpeg" alt="Image 6"></div>
-      <div><img data-lazy="rolts/L1002819.jpeg" alt="Image 7"></div>
-      <div><img data-lazy="rolts/L1002828.jpeg" alt="Image 8"></div>
-      <div><img data-lazy="rolts/L1002839.jpeg" alt="Image 9"></div>
-      <div><img data-lazy="rolts/L1002843.jpeg" alt="Image 10"></div>
-      <div><img data-lazy="rolts/L1002860.jpeg" alt="Image 11"></div>
-      <div><img data-lazy="rolts/L1002870.jpeg" alt="Image 12"></div>
-
-      
-      <!-- Add other images here -->
-    </div>
-    <div class="controls">
-      <p id="slide-counter" class="slide-counter" style="color: #e8a0bd; justify-content: center; margin-top:auto; text-shadow: none;"></p>
-
-    </div>
-    <button id="grid-view-button" class="grid-view-button" style="text-shadow: none;">Grid View</button>
-    <i class="fas fa-angle-double-down" style="color: white;"></i>
-  </div>
-      <div class="flex-container">
-    <div>
-      <p class="backgroundInfo" style="text-shadow: none; margin:7.5%">Cool boats and stuff</p>
-    </div>
-  </div>
+  
     
 <!-- Include Slick Slider JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -462,7 +435,7 @@ left: -5%;
           autoplaySpeed: 2500,
           dots: false,
           arrows: false,
-          speed: 250,
+          speed: 500,
           lazyLoad: 'ondemand',
           accessibility: true,
           pauseOnFocus: true,

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,700;1,8..144,700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore ERP, a photographic project by Ollie Morris, focusing on the journey of dealing with OCD and finding healing through nature. Discover the marks left on nature by people who have never met.">
+  <meta name="keywords" content="erp, photographic project, OCD, nature, healing, nature photography, mental health, therapy, environment, marks in nature, Ollie Morris">
+  <meta name="author" content="Ollie Morris">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+
+  <title>Rolt's Boatyard</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Add Slick CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <!-- Add Slick theme CSS (optional) -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <link rel="stylesheet" href="https://use.typekit.net/usz3fwq.css">
+
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    :root{
+      --sliderWidth: 70%;
+      --images-per-row: 3; /* Default number of images per row */
+      --gap: 3%; /* Gap between images */
+    }
+    /* Updated CSS for the Slick slider */
+    .slick-slider {
+      width: var(--sliderWidth); /* Set maximum width */
+      margin: 0 auto; /* Center the slider horizontally */
+      margin-top: 5%;
+    }
+
+    .slick-slide img {
+      max-width: 100%; /* Limit image width to prevent overflow */
+      max-height: 80vh; /* Set maximum height relative to viewport height */
+      display: block; /* Ensure images are displayed as blocks */
+      margin: 0 auto; /* Center images horizontally within slides */
+      margin-bottom: 5%;
+    }
+
+    .luxbar-fixed{
+      margin-bottom: 50%;
+    }
+
+    .fas {
+      display:none;
+    }
+
+    @media only screen and (max-width:950px){
+      .luxbar-brand{
+        font-size: 100%;
+      }
+      .slick-slider{
+        margin-top: 10%;
+      }
+      .flexcontainer{
+        margin-top: 5%;
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      .slick-slider {
+        padding-top: 5% auto;
+        margin:5% auto;
+        margin-top:30%;
+        align-content: center;
+        width: calc(var(--sliderWidth)+20%) !important; 
+      }
+      .fas{
+        display:inline-block;
+      }
+      .slick-slide img {
+        width: 90%; /* Reset max-width */
+      }
+      .backgroundInfo{
+        margin-right:-25%;
+        top: 100vh;
+      }
+      .luxbar-brand{
+        font-size: 8vw;
+      }
+      .slide-counter{
+        margin:1%
+      }
+    }
+    h1 {
+      margin-top: 20px;
+    }
+
+    .next-arrow{
+      right: -5%;
+      border-right: 0 solid transparent;
+      border-left: 0px  solid transparent;
+      border-top: 0px solid transparent;
+      border-bottom: 0px solid transparent;
+      background-color: transparent;
+      padding-left: 5%;
+      font-size: 30px;
+      color: white;
+    }
+
+    .prev-arrow{
+      left: -5%;
+      border-right: 0 solid transparent;
+      border-left: 0px  solid transparent;
+      border-top: 0px solid transparent;
+      border-bottom: 0px solid transparent;
+      background-color: transparent;
+      padding-right: 5%;
+      font-size: 30px;
+      color: white;
+    }
+    .slide-arrow{
+      position: absolute;
+      top: 50%;
+      margin-top: -15px;
+    }
+    .fa {
+      font-size: 24px; /* Adjust the font size as needed */
+    }
+    .luxbar-fixed{
+      margin-bottom: 20%;
+    }
+    .luxbar-menu-material-green{
+      background-color: transparent;
+    }
+
+    .grid-view {
+      display: grid;
+      grid-template-columns: repeat(var(--images-per-row), 1fr);
+      gap: var(--gap);
+      padding: 0 10vw; /* 10% padding on either side */
+      padding-top: 10%;
+      align-items: center;
+    }
+    .grid-view .slick-slide {
+      box-sizing: border-box;
+      padding: calc(var(--gap) / 2);
+      display: flex;
+      align-items: center; /* Vertically centers the image */
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .grid-view img {
+      width: 100%;
+      height: auto;
+      object-fit: contain; /* Ensures the entire image is visible */
+    }
+
+    @media (max-width: 1200px) {
+      :root {
+        --images-per-row: 3; /* Number of images per row for medium screens */
+      }
+    }
+    @media (max-width: 768px) {
+      :root {
+        --images-per-row: 2; /* Number of images per row for small screens */
+      }
+    }
+    @media (max-width: 480px) {
+      :root {
+        --images-per-row: 1; /* Number of images per row for extra small screens */
+        --gap: 1.5%;
+      }
+      .grid-view{
+        padding-top: 30%;
+      }
+    }
+
+    .controls {
+      justify-content: space-between;
+      align-items: center;
+    }
+    .grid-view-button {
+      background-color: #e8a0bd;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      position: fixed; /* Make the button fixed */
+      bottom: 20px; /* Position it at the bottom */
+      right: 20px; /* Position it at the right */
+      z-index: 1000; /* Ensure it is above other elements */
+    }
+    .grid-view .backgroundInfo,
+    .grid-view #slide-counter,
+    .grid-view .grid-view-button {
+      display: none; /* Hide text, slide counter, and button in grid view */
+    }
+  </style>
+</head>
+
+<body>
+  <header id="luxbar" class="luxbar-fixed">
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green">
+        <ul class="luxbar-navigation">
+            <li class="luxbar-header">
+                <a href="index.html" class="luxbar-brand">Ollie Morris</a>
+                <label class="luxbar-hamburger luxbar-hamburger-spin" 
+                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+            </li>
+            <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
+            <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
+  
+            <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
+  
+            <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
+
+            <li class="luxbar-item"><a href="contact.html">About</a></li>
+
+        </ul>
+    </div>
+  </header>
+
+  <!-- Slick Slider Container -->
+  <div class="flex-container">
+    <div class="slick-slider grid-view-container">
+      <!-- Add your images here -->
+      <div><img src="rolts/L1002787.jpeg" alt="Image 1" tabindex="0" id="slideshow-container"></div>
+      <div><img src="rolts/L1002790.jpeg" alt="Image 2"></div>
+      <div><img data-lazy="rolts/L1002794.jpeg" alt="Image 3"></div>
+      <div><img data-lazy="rolts/L1002801.jpeg" alt="Image 4"></div>
+      <div><img data-lazy="rolts/L1002811.jpeg" alt="Image 5"></div>
+      <div><img data-lazy="rolts/L1002816.jpeg" alt="Image 6"></div>
+      <div><img data-lazy="rolts/L1002819.jpeg" alt="Image 7"></div>
+      <div><img data-lazy="rolts/L1002828.jpeg" alt="Image 8"></div>
+      <div><img data-lazy="rolts/L1002839.jpeg" alt="Image 9"></div>
+      <div><img data-lazy="rolts/L1002843.jpeg" alt="Image 10"></div>
+      <div><img data-lazy="rolts/L1002860.jpeg" alt="Image 11"></div>
+      <div><img data-lazy="rolts/L1002870.jpeg" alt="Image 12"></div>
+      <!-- Add other images here -->
+    </div>
+    <div class="controls">
+      <p id="slide-counter" class="slide-counter" style="color: #e8a0bd; justify-content: center; margin-top:auto;"></p>
+    </div>
+    <button id="grid-view-button" class="grid-view-button">Grid View</button>
+    <i class="fas fa-angle-double-down" style="color: white;"></i>
+  </div>
+
+  <!-- Include Slick Slider JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var slickSlider = $('.slick-slider');
+      
+      // Update slide counter on slide change
+      function updateSlideCounter(currentSlide) {
+        var slideCount = currentSlide + 1;
+        var totalSlides = slickSlider.slick('getSlick').slideCount;
+        $('#slide-counter').text(slideCount + '/' + totalSlides);
+        console.log('Slide counter updated: ' + slideCount + '/' + totalSlides);
+      }
+
+      // Initialize Slick Slider
+      function initializeSlickSlider(autoplay = false) {
+        console.log('Initializing Slick Slider with autoplay: ' + autoplay);
+        slickSlider.slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: false,
+          autoplaySpeed: 2500,
+          dots: false,
+          arrows: false,
+          speed: 250,
+          lazyLoad: 'progressive',
+          accessibility: true,
+          pauseOnFocus: true,
+          fade: true,
+          pauseOnHover: false,
+          cssEase: 'linear'
+        });
+
+        // Update slide counter after change
+        slickSlider.on('afterChange', function(event, slick, currentSlide){
+          console.log('afterChange event triggered');
+          updateSlideCounter(currentSlide);
+        });
+
+        // Update slide counter before change
+        slickSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+          console.log('beforeChange event triggered');
+          updateSlideCounter(nextSlide);
+        });
+
+        // Initial update of slide counter
+        var initialSlide = slickSlider.slick('slickCurrentSlide') + 1;
+        var totalSlides = slickSlider.slick('getSlick').slideCount;
+        $('#slide-counter').text(initialSlide + '/' + totalSlides);
+        console.log('Initial slide counter: ' + initialSlide + '/' + totalSlides);
+      }
+
+      // Initial Slick Slider setup
+      initializeSlickSlider();
+
+      // Focus on the slideshow container when the page loads
+      $('#slideshow-container').focus().css('outline', 'none');
+      console.log('Slideshow container focused');
+
+      // Click event handler for images
+      function imageClickHandler(event) {
+        if ($('.grid-view-container').hasClass('grid-view')) {
+          console.log('Grid view is activated, navigation prevented');
+          return false; // Prevent navigation in grid view
+        }
+        var imageWidth = $(this).width();
+        var clickPosition = event.pageX - $(this).offset().left;
+        console.log('Image clicked at position: ' + clickPosition + ' of ' + imageWidth);
+        if (clickPosition < imageWidth / 2) {
+          console.log('Navigating to previous slide');
+          slickSlider.slick('slickPrev');
+        } else {
+          console.log('Navigating to next slide');
+          slickSlider.slick('slickNext');
+        }
+      }
+
+      // Add click event listeners to images
+      function addImageClickListeners() {
+        $('.slick-slider img').on('click', imageClickHandler);
+        console.log('Click event listeners added to images');
+      }
+
+      // Remove click event listeners from images
+      function removeImageClickListeners() {
+        $('.slick-slider img').off('click', imageClickHandler);
+        console.log('Click event listeners removed from images');
+      }
+
+      // Add load event listener to images
+      function addLoadEventListener() {
+        $('.grid-view-container img').on('load', function() {
+          var img = $(this);
+          if (img.closest('.grid-view-container').length) {
+            var imgWidth = img[0].naturalWidth;
+            var imgHeight = img[0].naturalHeight;
+            var topPadding = (imgWidth > imgHeight) ? 0.25*imgHeight : '0';
+            img.css('padding-top', topPadding);
+            console.log('Set top padding for image on load: ' + topPadding + ' (Width: ' + imgWidth + ', Height: ' + imgHeight + ')');
+          }
+        });
+      }
+
+      // Remove load event listener from images
+      function removeLoadEventListener() {
+        $('.grid-view-container img').off('load');
+      }
+
+      // Set top padding for each image based on its aspect ratio
+      function setTopPaddingForImages() {
+        $('.grid-view-container img').each(function() {
+          var imgWidth = $(this).width();
+          var imgHeight = $(this).height();
+          var topPadding = (imgWidth > imgHeight) ? '25%' : '0px';
+          $(this).css('padding-top', topPadding);
+          console.log('Set top padding for image: ' + topPadding);
+        });
+      }
+
+      // Toggle grid view
+      $('#grid-view-button').on('click', function() {
+        $('.grid-view-container').toggleClass('grid-view');
+        console.log('grid-view class toggled:', $('.grid-view-container').hasClass('grid-view'));
+
+        if ($('.grid-view-container').hasClass('grid-view')) {
+          console.log('Switching to grid view');
+
+          // Unslick the slider and reset styles
+          $('.slick-slider .slick-slide').css('opacity', '1'); // Ensure all images are visible
+
+          // Remove lazy loading by replacing `data-lazy` with `src`
+          $('.slick-slider img[data-lazy]').each(function() {
+            $(this).attr('src', $(this).data('lazy')).removeAttr('data-lazy');
+          });
+          slickSlider.slick('unslick');
+          removeImageClickListeners(); // Remove click event listeners
+          //setTopPaddingForImages(); // Set top padding for images
+          //addLoadEventListener(); // Add load event listener to images
+          $('.backgroundInfo').css('display', 'none'); // Hide additional info
+          $('.slide-counter').css('display', 'none'); // Hide the slide counter
+          $('#grid-view-button').text('Slideshow View');
+        } else {
+          console.log('Switching to slideshow view');
+          removeLoadEventListener(); // Remove load event listener from images
+          location.reload(); // Refresh the page
+        }
+      });
+
+      // Prevent slide transition in grid view
+      slickSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        if ($('.grid-view-container').hasClass('grid-view')) {
+          console.log('Slide transition prevented in grid view');
+          event.preventDefault(); // Prevent slide transition
+        }
+      });
+
+      // Add initial click event listeners
+      addImageClickListeners();
+    });
+  </script>
+</body>
+
+</html>

@@ -4,16 +4,16 @@
 <head>
   <meta charset="utf-8">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,700;1,8..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,700;1,8..144,700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/usz3fwq.css">
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
 
   <style>
-
     body {
       text-align: center;
-
     }
 
     ul {
@@ -25,7 +25,7 @@
 
     h1 {
       margin-top: 20px;
-    } 
+    }
 
     a {
       text-decoration-line: none;
@@ -50,52 +50,31 @@
       height: 100%;
     }
 
-
-    h1 {
-      margin-top: 20px;
+    .luxbar-fixed {
+      display: none; /* Hide luxbar by default */
     }
-    .luxbar-fixed{
-  margin-bottom: 20%;
-}
-.luxbar-menu-material-green{
+
+    .luxbar-menu-material-green {
       background-color: transparent;
     }
 
-
-  /* Luxbar styles */
-.luxbar {
-  background-color: #0d4200; /* Match the background color */
-  font-family: "Roboto Serif", serif; /* Match the font-family */
-}
-
-
-
-
-/* Luxbar hamburger menu icon when active */
-.luxbar-checkbox:checked + .luxbar-menu .luxbar-hamburger > span:before {
-  background-color: #ffc0d9; /* Match the hamburger icon color when active */
-}
-@media only screen and (max-width:1700px){
-  .iframe-container{
+    @media only screen and (max-width: 1700px) {
+      .iframe-container {
         margin-top: 5%;
       }
-}
+    }
 
-@media only screen and (max-width:1200px){
-    .luxbar-brand{
+    @media only screen and (max-width: 1200px) {
+      .luxbar-brand {
         font-size: 100%;
       }
-      .iframe-container{
-        margin-top: 10%;
-      }
+
       .iframe-container {
+        margin-top: 10%;
+        padding-bottom: 60%;
+      }
+    }
 
-	    padding-bottom: 60%;
-}
-      
-  }
-
-    /* Style for mobile devices */
     @media only screen and (max-width: 600px) {
       .iframe-container {
         max-width: 95%;
@@ -103,47 +82,196 @@
         margin-top: 40%;
       }
 
-    }
-    @media only screen and (max-width: 600px) {
-      p{
+      p {
         font-size: 100%;
       }
-      .luxbar-brand{
+
+      .luxbar-brand {
         font-size: 8vw;
       }
+
+      .luxbar-fixed {
+        display: block; /* Show luxbar on mobile view */
+      }
     }
+
+    /* New CSS for fixed header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      padding: 10px;
+      z-index: 1000;
+      background-color: transparent;
+    }
+
+    header ul {
+      list-style-type: none;
+      padding: 0;
+      padding-left: 5%;
+      background-color: transparent;
+    }
+
+    header ul li {
+      margin: 10px 0;
+      background-color: transparent;
+    }
+
+    header ul li a {
+      text-decoration: none;
+      text-align: left;
+      background-color: transparent;
+    }
+
+    li a {
+      font-family: "owners-wide", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      background-color: transparent;
+    }
+
+    h1 {
+      text-align: left;
+      text-transform: uppercase;
+      background-color: transparent;
+    }
+
+    li {
+      background-color: transparent;
+    }
+    div.LabeledButton_module_box__2e0341f7:nth-child(3) > button:nth-child(2) {
+display: none;
+}
+
+    header ul {
+      display: block; /* Show the desktop navigation by default */
+    }
+
+    .luxbar-fixed {
+      display: none; /* Hide the mobile navigation by default */
+    }
+
+    @media only screen and (max-width: 600px) {
+      header ul {
+        display: none; /* Hide the desktop navigation on small screens */
+      }
+
+      .luxbar-fixed {
+        display: block; /* Show the mobile navigation on small screens */
+      }
+    }
+    .container{
+      max-width: 65%;
+      height: auto;
+      background-color: transparent;
+      justify-content: center;
+      align-items: center;
+      margin: 4% auto;
+      position: relative;
+      --plyr-color-main: #e8a0bd;
+    }
+    
+    .plyr__progress {
+background: transparent;
+}
+
+    .plyr__controls {
+      background: transparent !important;
+    }
+    .plyr__controls .plyr__controls__item.plyr__progress__container {
+background: transparent !important;
+}
+.plyr__controls .plyr__controls__item.plyr__time {
+background-color: transparent;
+}
+
+    .plyr__progress {
+      background: transparent !important;
+    }
+
+    .plyr__control {
+      background: transparent !important;
+    }
+    .plyr__controls .plyr__controls__item.plyr__time {
+background-color: transparent;
+}
+.plyr button {
+background-color: transparent;
+background-color: transparent;
+}
+.plyr--full-ui a, .plyr--full-ui button, .plyr--full-ui input, .plyr--full-ui label {
+background-color: transparent !important;
+}
+.plyr__controls .plyr__controls__item {
+background-color: transparent;
+}
+.plyr__menu .plyr__control svg {
+background-color: transparent;
+}
+.plyr__control svg {
+background-color: transparent;
+}
+
+  @media only screen and (max-width: 1200px) {
+    .container {
+      margin: 10% auto; /* Adjusted margin for medium screens */
+      max-width: 90%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .container {
+      margin: 25% auto; /* Adjusted margin for small screens */
+      max-width: 90%;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .container {
+      margin: 30% auto; /* Adjusted margin for extra small screens */
+      max-width: 90%;
+    }
+  }
 
   </style>
 </head>
 
 <body>
+  <header>
+    <ul>
+      <h1><li></li><a href="index.html">Ollie Morris</a></li></h1>
+      <li><a href="howToTrespass.html">How to Trespass</a></li>
+      <li><a href="erp.html">E.R.P</a></li>
+      <li><a href="uprooted.html">Uprooted</a></li>
+      <li><a href="rolts.html">Rolts</a></li>
+      <li><a href="contact.html">About</a></li>
+    </ul>
+  </header>
   <header id="luxbar" class="luxbar-fixed">
-    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
     <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green">
-        <ul class="luxbar-navigation">
-            <li class="luxbar-header">
-                <a href="index.html" class="luxbar-brand">Ollie Morris</a>
-                <label class="luxbar-hamburger luxbar-hamburger-spin" 
-                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
-            </li>
-            <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
-            <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
-  
-            <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
-  
-            <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
-
-            <li class="luxbar-item"><a href="contact.html">About</a></li>
-
-        </ul>
+      <ul class="luxbar-navigation">
+        <li class="luxbar-header">
+          <a href="index.html" class="luxbar-brand">Ollie Morris</a>
+          <label class="luxbar-hamburger luxbar-hamburger-spin" id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+        </li>
+        <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
+        <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
+        <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
+        <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
+        <li class="luxbar-item"><a href="contact.html">About</a></li>
+      </ul>
     </div>
   </header>
-
-  <div class="iframe-container">
-    <iframe src="https://player.vimeo.com/video/907604444?badge=0&amp;autopause=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Uprooted - Ollie Morris 2022"></iframe>
+  <div class="container">
+    <div id="player" data-plyr-provider="vimeo" data-plyr-embed-id="907604444"></div>
   </div>
 
-  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+  <script>
+    const player = new Plyr('#player');
+  </script>
 </body>
 
 </html>

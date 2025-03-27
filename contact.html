@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,700;1,8..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,700;1,8..144,700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/usz3fwq.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     body {
@@ -25,10 +27,8 @@
       padding: 0;
     }
 
-
     p {
       text-align: left;
-      /*margin-top: 20px; /* Adjust the margin to control the vertical position */
       font-size: 150%;
       display: flex;
       flex-direction: column;
@@ -37,55 +37,137 @@
       position: relative; /* Added to fix the position */
       top: 50%; /* Positioned 20% from the bottom */
       width: 80%; /* Added to ensure full width */
-      margin:10%;
+      margin: 10%;
     }
 
     p a {
       margin-top: 10px; /* Adjust the margin between links */
     }
 
-
-
-    h1 {
-      margin-top: 20px;
+    .luxbar-fixed {
+      display: none; /* Hide luxbar by default */
     }
-    .luxbar-fixed{
-  margin-bottom: 20%;
-}
-.luxbar-menu-material-green{
+
+    .luxbar-menu-material-green {
       background-color: transparent;
     }
 
-    @media only screen and (max-width:950px){
-    .luxbar-brand{
+
+
+    .fa-instagram {
+      font-size: 200%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+    .fa-envelope {
+      font-size: 200%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+    /* New CSS for fixed header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      padding: 10px;
+      z-index: 1000;
+      background-color: transparent;
+    }
+
+    header ul {
+      list-style-type: none;
+      padding: 0;
+      padding-left: 5%;
+      background-color: transparent;
+    }
+
+    header ul li {
+      margin: 10px 0;
+      background-color: transparent;
+    }
+
+    header ul li a {
+      text-decoration: none;
+      text-align: left;
+      background-color: transparent;
+    }
+
+    li a {
+      font-family: "owners-wide", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      background-color: transparent;
+    }
+
+    h1 {
+      text-align: left;
+      text-transform: uppercase;
+      background-color: transparent;
+    }
+
+    li {
+      background-color: transparent;
+    }
+p {
+      text-align: left;
+      font-size: 150%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: left;
+      position: relative; /* Added to fix the position */
+      top: 50%; /* Positioned 20% from the bottom */
+      width: 69.5%; /* Added to ensure full width */
+      margin: 10% auto;
+    }
+    @media only screen and (max-width: 950px) {
+      .luxbar-brand {
         font-size: 100%;
       }
-  }
-  @media only screen and (max-width: 600px) {
-      p{
+    }
+
+    @media only screen and (max-width: 600px) {
+      p {
         font-size: 100%;
         margin-top: 30%;
       }
-      .luxbar-brand{
+      li a{
+        margin-left: inherit;
+      }
+
+      .luxbar-brand {
         font-size: 8vw;
       }
 
+      .luxbar-fixed {
+        display: block; /* Show luxbar on mobile view */
+      }
+      header {
+      display: none;
+      }
+      header ul {
+        background-color: rgba(192, 223, 232, 0.9);
+      }
+      
     }
-
-    .fa-instagram{
-  font-size: 200%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-.fa-envelope{
-  font-size: 200%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
   </style>
 </head>
 
 <body>
+  <header>
+    <ul>
+      <h1><li></li><a href="index.html">Ollie Morris</a></li></h1>
+      <li><a href="howToTrespass.html">How to Trespass</a></li>
+      <li><a href="erp.html">E.R.P</a></li>
+      <li><a href="uprooted.html">Uprooted</a></li>
+      <li><a href="rolts.html">Rolts</a></li>
+      <li><a href="contact.html">About</a></li>
+    </ul>
+  </header>
+
   <script>
     // Check if the width of the window is below or equal to 600 pixels
     if (window.innerWidth <= 600) {
@@ -94,38 +176,37 @@
     }
   </script>
   <header id="luxbar" class="luxbar-fixed">
-    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
     <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green">
-        <ul class="luxbar-navigation">
-            <li class="luxbar-header">
-                <a href="index.html" class="luxbar-brand">Ollie Morris</a>
-                <label class="luxbar-hamburger luxbar-hamburger-spin" 
-                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
-            </li>
-            <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
-            <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
-            <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
-            <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
-            <li class="luxbar-item"><a href="contact.html">About</a></li>
-        </ul>
+      <ul class="luxbar-navigation">
+        <li class="luxbar-header">
+          <a href="index.html" class="luxbar-brand">Ollie Morris</a>
+          <label class="luxbar-hamburger luxbar-hamburger-spin" id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+        </li>
+        <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
+        <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
+        <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
+        <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
+        <li class="luxbar-item"><a href="contact.html">About</a></li>
+      </ul>
     </div>
   </header>
   <!-- Content of the About page goes here -->
-  <p style="text-transform: none;">Ollie's work explores the relationships between people and their environments, 
+  <p style="text-transform: none;">Ollie's work explores the relationships between people and their environments,
     with a current focus on issues around access to rural areas;
     themes of transition, mental health, and identity are central to my work.
     He is also involved with the campaign for a Right to Roam in England.
     He is currently enrolled on the Photography BA course at UWE.</p>
   <div>
-  <p>
-    commissions and print sales available on request<br>
-  </p>
+    <p>
+      commissions and print sales available on request<br>
+    </p>
   </div>
-      <!-- Add icon library -->
-<footer><a href="https://instagram.com/olliemorrisphotos" class="fa fa-instagram"></a>
-  <a href="mailto:olliewrmorris@gmail.com" class="fa fa-envelope"></a></footer>
+  <!-- Add icon library -->
+  <footer><a href="https://instagram.com/olliemorrisphotos" class="fa fa-instagram"></a>
+    <a href="mailto:olliewrmorris@gmail.com" class="fa fa-envelope"></a></footer>
 
-<!-- Add font awesome icons -->
+  <!-- Add font awesome icons -->
 
 </body>
 

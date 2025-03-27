@@ -1,15 +1,15 @@
 * {
-  font-family: "Roboto Serif", serif;
+  font-family: "owners-wide", sans-serif;
   background-color: #c0dfe8;
   text-align: center;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
-  cursor: url("./cursor.png") 45 70, url("./cursor.png"), auto; ; /* Ensure default cursor for all elements */
+  cursor: url("./cursor.png") 45 45, url("./cursor.png"), auto; /* Ensure default cursor for all elements */
 }
 
 h1, p, a, li, span, div {
-  cursor: url("./cursor.png") 45 70, url("./cursor.png"), auto; /* Ensure custom cursor for text elements */
+  cursor: url("./cursor.png") 45 45, url("./cursor.png"), auto; /* Ensure custom cursor for text elements */
 }
 
 h1 {
@@ -17,9 +17,11 @@ h1 {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
+  letter-spacing: 0.067em;
   font-variation-settings:
       "wdth" 100,
       "GRAD" 0;
+  text-shadow: 1px 1px 2px #000000, -1px -1px 2px #ffffff; /* Embossed effect on hover */
 }
 
 ul {
@@ -31,8 +33,6 @@ ul {
   overflow: auto;
   font-weight: bold;
 }
-
-
 
 .slideshow-container {
   position: relative;
@@ -58,20 +58,20 @@ ul {
 p {
   font-weight: bold;
   color: #e8a0bd;
+  letter-spacing: 0.052em;
+  font-size: 100%;
 }
 
 li {
-  display: inline-block;
   font-size: 150%;
-  color: white;
 }
 
-a:hover, .luxbar-menu a:hover {
+a:hover, .luxbar-menu img:hover {
   text-shadow: 1px 1px 2px #000000, -1px -1px 2px #ffffff; /* Embossed effect on hover */
-  cursor: url("./hatUp.png") 45 45, auto; /* Custom cursor on hover */
+  /*cursor: url("./hatUp.png") 45 45, auto; /* Custom cursor on hover */
 }
 
-a:hover{
+img:hover, h1 a:hover {
   cursor: url("./hatUp.png") 45 45, auto; /* Custom cursor on hover */
 }
 
@@ -81,13 +81,12 @@ a:hover{
 
 a {
   text-decoration-line: none;
-  color: #ffd2e4;
+  color: #e8a0bd;
 }
 
-p:hover, img:hover{
+p:hover, img:hover {
   cursor: url("./hatUp.png") 45 45, auto; /* Custom cursor on hover */
 }
-
 
 li a {
   margin-right: auto;
@@ -99,7 +98,8 @@ li a {
 }
 
 h1 a {
-  color: white;
+  color: #e8a0bd;
+  background-color: transparent;
 }
 
 h1 {
@@ -122,7 +122,8 @@ h1 {
 }
 
 .luxbar-fixed {
-  box-shadow: none;
+  display: none; /* Hide luxbar by default */
+  box-shadow:none;
 }
 
 .luxbar-navigation {
@@ -153,6 +154,10 @@ h1 {
 
   .gallery-image {
     width: 100%; /* Full width for smaller screens */
+  }
+
+  .luxbar-fixed {
+    display: block; /* Show luxbar on mobile view */
   }
 }
 

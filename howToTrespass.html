@@ -6,13 +6,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,700;1,8..144,700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore How to Trespass, a photographic project by Ollie Morris.">
-  <meta name="keywords" content="how to trespass, photographic project, Ollie Morris">
+  <meta name="description" content="Explore ERP, a photographic project by Ollie Morris, focusing on the journey of dealing with OCD and finding healing through nature. Discover the marks left on nature by people who have never met.">
+  <meta name="keywords" content="erp, photographic project, OCD, nature, healing, nature photography, mental health, therapy, environment, marks in nature, Ollie Morris">
   <meta name="author" content="Ollie Morris">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
 
-  <title>How to Trespass</title>
+  <title>ERP - A Photographic Project by Ollie Morris</title>
   <link rel="stylesheet" href="styles.css">
   
   <!-- Add Slick CSS -->
@@ -22,274 +22,428 @@
   
   <!-- Include jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/usz3fwq.css">
   <style>
-    :root {
+    :root{
       --sliderWidth: 70%;
-      --images-per-row: 3; /* Default number of images per row */
-      --gap: 3%; /* Gap between images */
     }
-
     /* Updated CSS for the Slick slider */
     .slick-slider {
-      width: var(--sliderWidth);
-      margin: 0 auto;
+      width: var(--sliderWidth); /* Set maximum widthdhdj */
+      margin: 0 auto; /* Center the slider horizontally */
       margin-top: 5%;
-    }
+    } 
 
-    .slick-slide img {
-      max-width: 100%; /* Limit image width to prevent overflow */
-      max-height: 80vh; /* Set maximum height relative to viewport height */
-      display: block; /* Ensure images are displayed as blocks */
-      margin: 0 auto; /* Center images horizontally within slides */
-      margin-bottom: 5%;
-    }
 
-    .luxbar-fixed {
-      margin-bottom: 50%;
-    }
+.slick-slide img {
+  max-width: 100%; /* Limit image width to prevent overflow */
+  max-height: 80vh; /* Set maximum height relative to viewport height */
+  display: block; /* Ensure images are displayed as blocks */
+  margin: 0 auto; /* Center images horizontally within slides */
+  margin-bottom: 5%;
+}
 
-    .fas {
-      display: none;
-    }
+.luxbar-fixed{
+  margin-bottom: 50%;
+}
+.fas {
+  display:none;
+}
 
-    @media only screen and (max-width: 950px) {
-      .luxbar-brand {
+
+
+  @media only screen and (max-width:950px){
+    .luxbar-brand{
         font-size: 100%;
       }
-      .slick-slider {
-        margin-top: 10%;
-      }
-      .flexcontainer {
-        margin-top: 5%;
-      }
+      .slick-slider{
+      margin-top: 10%;
     }
+    .flexcontainer{
+      margin-top: 5%;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .slick-slider {
 
-    @media only screen and (max-width: 600px) {
-      .slick-slider {
-        padding-top: 5% auto;
-        margin: 5% auto;
-        margin-top: 30%;
-        align-content: center;
-        width: calc(var(--sliderWidth) + 20%) !important;
-      }
-      .fas {
-        display: inline-block;
-      }
-      .slick-slide img {
-        width: 90%; /* Reset max-width */
-      }
-      .backgroundInfo {
-        margin-right: -25%;
-        top: 100vh;
-      }
-      .luxbar-brand {
+  padding-top: 5% auto;
+  margin:5% auto;
+  margin-top:30%;
+  align-content: center;
+  width: calc(var(--sliderWidth)+20%) !important; 
+}
+.fas{
+  display:inline-block;
+}
+.slick-slide img {
+   width: 90%; /* Reset max-width */
+    /* Other styles */
+  }
+.backgroundInfo{
+  margin-right:-25%;
+  top: 100vh;
+}
+.luxbar-brand{
         font-size: 8vw;
       }
-      .slide-counter {
-        margin: 1%;
+      .slide-counter{
+        margin:1%
+      }
+      .luxbar-fixed {
+        display: block; /* Show luxbar on mobile view */
+      }
+      header {
+        display: none;
+      }
+      header ul {
+        background-color: rgba(192, 223, 232, 0.9);
       }
     }
-
     h1 {
       margin-top: 20px;
     }
 
-    .next-arrow {
-      right: -5%;
-      border-right: 0 solid transparent;
-      border-left: 0px solid transparent;
-      border-top: 0px solid transparent;
-      border-bottom: 0px solid transparent;
+/* Adjust size of images */
+
+
+.next-arrow{
+  right: -5%;
+  border-right: 0 solid transparent;
+  border-left: 0px  solid transparent;
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  background-color: transparent;
+  padding-left: 5%;
+  font-size: 30px;
+  color: white;
+}
+
+.prev-arrow{
+left: -5%;
+  border-right: 0 solid transparent;
+  border-left: 0px  solid transparent;
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  background-color: transparent;
+  padding-right: 5%;
+  font-size: 30px;
+  color: white;
+}
+.slide-arrow{
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+}
+.fa {
+  font-size: 24px; /* Adjust the font size as needed */
+}
+.luxbar-fixed{
+  margin-bottom: 20%;
+}
+.luxbar-menu-material-green{
       background-color: transparent;
-      padding-left: 5%;
-      font-size: 30px;
-      color: white;
     }
 
-    .prev-arrow {
-      left: -5%;
-      border-right: 0 solid transparent;
-      border-left: 0px solid transparent;
-      border-top: 0px solid transparent;
-      border-bottom: 0px solid transparent;
-      background-color: transparent;
-      padding-right: 5%;
-      font-size: 30px;
-      color: white;
-    }
 
-    .slide-arrow {
-      position: absolute;
-      top: 50%;
-      margin-top: -15px;
-    }
+.backgroundInfo{
+  text-align: left;
+  align-content: flex-start;
+  text-align: left; 
+  text-transform: none;
+   justify-content: center; 
+    margin: 5%; 
+    font-size: 100%;
+    margin:auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.slick-track {
+  display: flex;
+}
+.slick-track .slick-slide {
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+  .landscape {
+    padding-top: 25%;
+  }
 
-    .fa {
-      font-size: 24px; /* Adjust the font size as needed */
-    }
+  :root {
+    --images-per-row: 3; /* Default number of images per row */
+    --gap: 3%; /* Gap between images */
+  }
 
-    .luxbar-fixed {
-      margin-bottom: 20%;
-    }
+  .grid-view {
+    display: grid;
+    grid-template-columns: repeat(var(--images-per-row), 1fr);
+    gap: var(--gap);
+    padding: 0 10vw; /* 10% padding on either side */
+    padding-top: 10%;
+    align-items: center;
+  }
+  .grid-view .slick-slide {
+    box-sizing: border-box;
+    padding: calc(var(--gap) / 2);
+    display: flex;
+    align-items: center; /* Vertically centers the image */
+    justify-content: center;
+    overflow: hidden;
+    padding-bottom: 10%;
+  }
 
-    .luxbar-menu-material-green {
-      background-color: transparent;
-    }
+  .grid-view img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensures the entire image is visible */
+  }
 
-    .backgroundInfo {
-      text-align: left;
-      align-content: flex-start;
-      text-align: left;
-      text-transform: none;
-      justify-content: center;
-      width: var(--sliderWidth);
-      margin: 5%;
-      font-size: 120%;
-      margin: auto;
-      margin-top: 5%;
-      margin-bottom: 5%;
-    }
+  .grid-view element {
+    padding-top: 25%;
+  }
 
-    .slick-track {
-      display: flex;
+  @media (max-width: 1200px) {
+    :root {
+      --images-per-row: 3; /* Number of images per row for medium screens */
     }
-
-    .slick-track .slick-slide {
-      display: flex;
-      height: auto;
-      align-items: center;
-      justify-content: center;
+  }
+  @media (max-width: 768px) {
+    :root {
+      --images-per-row: 2; /* Number of images per row for small screens */
     }
-
-    .landscape {
-      padding-top: 25%;
+  }
+  @media (max-width: 480px) {
+    :root {
+      --images-per-row: 1; /* Number of images per row for extra small screens */
+      --gap: 0.5%;
     }
-
     .grid-view {
-      display: grid;
-      grid-template-columns: repeat(var(--images-per-row), 1fr);
-      gap: var(--gap);
-      padding: 0 10vw; /* 10% padding on either side */
-      padding-top: 10%;
-      align-items: center;
+      padding-top: 30%;
     }
+  }
 
-    .grid-view .slick-slide {
-      box-sizing: border-box;
-      padding: calc(var(--gap) / 2);
-      display: flex;
-      align-items: center; /* Vertically centers the image */
-      justify-content: center;
-      overflow: hidden;
-      padding-bottom: 10%;
+  .controls {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .grid-view-button {
+    background-color: #e8a0bd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: fixed; /* Make the button fixed */
+    bottom: 20px; /* Position it at the bottom */
+    right: 20px; /* Position it at the right */
+    z-index: 1000; /* Ensure it is above other elements */
+  }
+  .grid-view .backgroundInfo,
+  .grid-view #slide-counter,
+  .grid-view .grid-view-button {
+    display: none; /* Hide text, slide counter, and button in grid view */
+  }
+
+  /* Modal styles */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    justify-content: center; /* Center the modal content */
+    align-items: center; /* Center the modal content */
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    background-color: transparent;
+  }
+
+  .modal img{
+    max-width: 80vw;
+    height: auto;
+    max-height: 80vh;
+    background-color: transparent;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color: transparent;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* New CSS for fixed header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    padding: 10px;
+    z-index: 1000;
+    background-color: transparent;
+  }
+  header ul {
+    list-style-type: none;
+    padding: 0;
+    padding-left: 5%;
+    background-color: transparent;
+  }
+  header ul li {
+    margin: 10px 0;
+    background-color: transparent;
+  }
+  header ul li a {
+    text-decoration: none;
+    text-align: left;
+    background-color: transparent;
+  }
+  li a{
+    font-family: "owners-wide", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    background-color: transparent;
+  }
+  h1 {
+    text-align: left;
+    text-transform: uppercase;
+    background-color: transparent;
+  }
+  li{
+    background-color: transparent;
+  }
+
+  .luxbar-fixed {
+      display: none; /* Hide luxbar by default */
     }
-
-    .grid-view img {
-      width: 100%;
-      height: auto;
-      object-fit: contain; /* Ensures the entire image is visible */
-    }
-
-    @media (max-width: 1200px) {
-      :root {
-        --images-per-row: 3; /* Number of images per row for medium screens */
+  @media only screen and (max-width: 600px) {
+      p {
+        font-size: 100%;
+        margin-top: 30%;
       }
-    }
-
-    @media (max-width: 768px) {
-      :root {
-        --images-per-row: 2; /* Number of images per row for small screens */
+      li a{
+        margin-left: inherit;
       }
-    }
 
-    @media (max-width: 480px) {
-      :root {
-        --images-per-row: 1; /* Number of images per row for extra small screens */
-        --gap: 1.5%;
+
+      .luxbar-brand {
+        font-size: 8vw;
       }
-      .grid-view {
-        padding-top: 30%;
+
+      .luxbar-fixed {
+        display: block; /* Show luxbar on mobile view */
       }
-    }
 
-    .controls {
-      justify-content: space-between;
-      align-items: center;
+      .luxbar-item a{
+        text-shadow: none;
+      }
+      .backgroundInfo{
+        width: 85vw;
+      }
+      header {
+      display: none;
+      }
+      header ul {
+        background-color: rgba(192, 223, 232, 0.9);
+      }
+      menu-material-green .luxbar-item:hover {
+      background-color: rgba(192, 223, 232, 0.9);
+      } 
+      
     }
+    .luxbar-menu-material-green .active,
+.luxbar-menu-material-green .luxbar-item:hover {
+  background-color:rgba(192, 223, 232, 0.9);
+}
 
-    .grid-view-button {
-      background-color: #e8a0bd;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      position: fixed; /* Make the button fixed */
-      bottom: 20px; /* Position it at the bottom */
-      right: 20px; /* Position it at the right */
-      z-index: 1000; /* Ensure it is above other elements */
-    }
+}
 
-    .grid-view .backgroundInfo,
-    .grid-view #slide-counter,
-    .grid-view .grid-view-button {
-      display: none; /* Hide text, slide counter, and button in grid view */
-    }
   </style>
 </head>
 
 <body>
+  <header>
+    <ul>
+      <h1><li></li><a href="index.html">Ollie Morris</a></li></h1>
+      <li><a href="howToTrespass.html">How to Trespass</a></li>
+      <li><a href="erp.html">E.R.P</a></li>
+      <li><a href="uprooted.html">Uprooted</a></li>
+      <li><a href="rolts.html">Rolts</a></li>
+      <li><a href="contact.html">About</a></li>
+    </ul>
+  </header>
   <header id="luxbar" class="luxbar-fixed">
-    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
     <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green">
-        <ul class="luxbar-navigation">
-            <li class="luxbar-header">
-                <a href="index.html" class="luxbar-brand">Ollie Morris</a>
-                <label class="luxbar-hamburger luxbar-hamburger-spin" 
-                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
-            </li>
-            <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
-            <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
-            <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
-            <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
-            <li class="luxbar-item"><a href="contact.html">About</a></li>
-        </ul>
+      <ul class="luxbar-navigation">
+        <li class="luxbar-header">
+          <a href="index.html" class="luxbar-brand">Ollie Morris</a>
+          <label class="luxbar-hamburger luxbar-hamburger-spin" id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+        </li>
+        <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
+        <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
+        <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
+        <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
+        <li class="luxbar-item"><a href="contact.html">About</a></li>
+      </ul>
     </div>
   </header>
-
-  <!-- Slick Slider Container -->
-  <div class="flex-container">
+   <div class="flex-container">
     <div class="slick-slider grid-view-container">
-      <!-- Add your images here -->
-      <div><img src="howToTrespass/howToTrespass-1.JPG" alt="howToTrespass Image 1" tabindex="0" id="slideshow-container"></div>
-      <div><img src="howToTrespass/howToTrespass-2.JPG" alt="howToTrespass Image 2"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-3.JPG" alt="howToTrespass Image 3"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-4.JPG" alt="howToTrespass Image 4"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-5.JPG" alt="howToTrespass Image 5"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-6.JPG" alt="howToTrespass Image 6"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-7.JPG" alt="howToTrespass Image 7"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-8.JPG" alt="howToTrespass Image 8"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-9.JPG" alt="howToTrespass Image 9"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-10.JPG" alt="howToTrespass Image 10"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-11.JPG" alt="howToTrespass Image 11"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-12.JPG" alt="howToTrespass Image 12"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-13.JPG" alt="howToTrespass Image 13"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-14.JPG" alt="howToTrespass Image 14"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-15.JPG" alt="howToTrespass Image 15"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-16.JPG" alt="howToTrespass Image 16"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-17.JPG" alt="howToTrespass Image 17"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-18.JPG" alt="howToTrespass Image 18"></div>
-      <div><img data-lazy="howToTrespass/howToTrespass-19.JPG" alt="howToTrespass Image 19"></div>
-    </div>
+  <!-- Correctly ordered images from Zine folder -->
+  <div><img src="howToTrespass/Zine/first layout_converted_2.jpg" alt="Zine Image 1" tabindex="0" id="slideshow-container"></div>
+  <div><img src="howToTrespass/Zine/first layout_converted_22.jpg" alt="Zine Image 2"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_23.jpg" alt="Zine Image 4"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_24.jpg" alt="Zine Image 5"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_25.jpg" alt="Zine Image 6"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_26.jpg" alt="Zine Image 7"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_27.jpg" alt="Zine Image 8"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_28.jpg" alt="Zine Image 9"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_29.jpg" alt="Zine Image 10"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_210.jpg" alt="Zine Image 11"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_211.jpg" alt="Zine Image 12"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_212.jpg" alt="Zine Image 13"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_213.jpg" alt="Zine Image 14"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_214.jpg" alt="Zine Image 15"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_215.jpg" alt="Zine Image 16"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_216.jpg" alt="Zine Image 17"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_217.jpg" alt="Zine Image 18"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_218.jpg" alt="Zine Image 19"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_219.jpg" alt="Zine Image 20"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_220.jpg" alt="Zine Image 21"></div>
+  <div><img data-lazy="howToTrespass/Zine/first layout_converted_221.jpg" alt="Zine Image 22"></div>
+</div>
     <div class="controls">
-      <p id="slide-counter" class="slide-counter" style="color: #e8a0bd; justify-content: center; margin-top:auto;"></p>
+      <p id="slide-counter" class="slide-counter" style="color: #e8a0bd; justify-content: center; margin-top:auto; text-shadow: none;"></p>
+
     </div>
-    <button id="grid-view-button" class="grid-view-button">Grid View</button>
+    <button id="grid-view-button" class="grid-view-button" style="text-shadow: none;">Grid View</button>
     <i class="fas fa-angle-double-down" style="color: white;"></i>
   </div>
-  <div class="flex-container">
+      <div class="flex-container">
     <div>
-      <p class="backgroundInfo" style="text-align: justify; text-shadow: none;">
-        How to Trespass is a photographic documentation of the Right to Roam campaign, created in collaboration with the Bristol Right to Roam group.<br><br>
+      <p class="backgroundInfo" style="text-shadow: none; margin:7.5%">How to Trespass is a photographic documentation of the Right to Roam campaign, created in collaboration with the Bristol Right to Roam group.<br><br>
         This work highlights the urgent need for land reform in England. Arbitrary and historically problematic land borders not only restrict free movement for people and wildlife but also facilitate environmental degradation, limiting access to natural spaces at a time when they are desperately needed.<br><br>
         
         Currently, 92% of England is off-limits to public access—a stark contrast to Scotland and many other countries with strong Right to Roam protections.<br>
@@ -303,7 +457,7 @@
     </div>
   </div>
     
-  <!-- Include Slick Slider JavaScript -->
+<!-- Include Slick Slider JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
     $(document).ready(function(){
@@ -327,8 +481,8 @@
           autoplaySpeed: 2500,
           dots: false,
           arrows: false,
-          speed: 250,
-          lazyLoad: 'progressive',
+          speed: 500,
+          lazyLoad: 'ondemand',
           accessibility: true,
           pauseOnFocus: true,
           fade: true,
@@ -368,6 +522,8 @@
       function imageClickHandler(event) {
         if ($('.grid-view-container').hasClass('grid-view')) {
           console.log('Grid view is activated, navigation prevented');
+          modal.css('display', 'flex');
+          modalImg.attr('src', this.src);
           return false; // Prevent navigation in grid view
         }
         var imageWidth = $(this).width();
@@ -393,32 +549,24 @@
         $('.slick-slider img').off('click', imageClickHandler);
         console.log('Click event listeners removed from images');
       }
-  
-      // Add load event listener to images
       function addLoadEventListener() {
-        $('.grid-view-container img').on('load', function() {
-          var img = $(this);
-          if (img.closest('.grid-view-container').length) {
-            var imgWidth = img[0].naturalWidth;
-            var imgHeight = img[0].naturalHeight;
-            var topPadding = (imgWidth > imgHeight) ? '25%' : '0';
-            img.css('padding-top', topPadding);
-            console.log('Set top padding for image on load: ' + topPadding + ' (Width: ' + imgWidth + ', Height: ' + imgHeight + ')');
-          }
-        });
-      }
-  
-      // Remove load event listener from images
-      function removeLoadEventListener() {
-        $('.grid-view-container img').off('load');
-      }
-  
+      $('.grid-view-container img').on('load', function() {
+        var img = $(this);
+        if (img.closest('.grid-view-container').length) {
+          var imgWidth = img[0].naturalWidth;
+          var imgHeight = img[0].naturalHeight;
+          var topPadding = (imgWidth > imgHeight) ? '25%' : '0';
+          img.css('padding-top', topPadding);
+          console.log('Set top padding for image on load: ' + topPadding + ' (Width: ' + imgWidth + ', Height: ' + imgHeight + ')');
+        }
+      });
+    }
       // Set top padding for each image based on its aspect ratio
       function setTopPaddingForImages() {
         $('.grid-view-container img').each(function() {
           var imgWidth = $(this).width();
           var imgHeight = $(this).height();
-          var topPadding = (imgWidth > imgHeight) ? '25%' : '0px';
+          var topPadding = (imgWidth > imgHeight) ? 0.25*imgHeight : '0px';
           $(this).css('padding-top', topPadding);
           console.log('Set top padding for image: ' + topPadding);
         });
@@ -427,28 +575,32 @@
       // Toggle grid view
       $('#grid-view-button').on('click', function() {
         $('.grid-view-container').toggleClass('grid-view');
-        console.log('grid-view class toggled:', $('.grid-view-container').hasClass('grid-view'));
+    console.log('grid-view class toggled:', $('.grid-view-container').hasClass('grid-view'));
     
-        if ($('.grid-view-container').hasClass('grid-view')) {
-          console.log('Switching to grid view');
+    if ($('.grid-view-container').hasClass('grid-view')) {
+        console.log('Switching to grid view');
         
-          // Unslick the slider and reset styles
-          $('.slick-slider .slick-slide').css('opacity', '1'); // Ensure all images are visible
+        // Unslick the slider and reset styles
+
+        $('.slick-slider .slick-slide').css('opacity', '1'); // Ensure all images are visible
         
-          // Remove lazy loading by replacing `data-lazy` with `src`
-          $('.slick-slider img[data-lazy]').each(function() {
+        // Remove lazy loading by replacing `data-lazy` with `src`
+        $('.slick-slider img[data-lazy]').each(function() {
             $(this).attr('src', $(this).data('lazy')).removeAttr('data-lazy');
-          });
-          slickSlider.slick('unslick');
-          removeImageClickListeners(); // Remove click event listeners
-          //setTopPaddingForImages(); // Set top padding for images
-          //addLoadEventListener(); // Add load event listener to images
-          $('.backgroundInfo').css('display', 'none'); // Hide additional info
-          $('.slide-counter').css('display', 'none'); // Hide the slide counter
-          $('#grid-view-button').text('Slideshow View');
+        });
+        slickSlider.slick('unslick');
+        //removeImageClickListeners(); // Remove click event listeners
+        //setTopPaddingForImages(); // Set top padding for images
+        //addLoadEventListener(); // Add load event listener
+        $('.backgroundInfo').css('display', 'none'); // Hide additional info
+        $('.slide-counter').css('display', 'none'); // Hide the slide counter
+        $('#grid-view-button').text('Slideshow View');
         } else {
           console.log('Switching to slideshow view');
-          removeLoadEventListener(); // Remove load event listener from images
+          //initializeSlickSlider(false); // Disable autoplay when reinitializing
+          //slickSlider.slick('slickGoTo', 0, true); // Set current slide to the start
+          //addImageClickListeners(); // Add click event listeners
+          //$('#grid-view-button').text('Grid View');
           location.reload(); // Refresh the page
         }
       });
@@ -463,8 +615,52 @@
   
       // Add initial click event listeners
       addImageClickListeners();
-    });
-  </script>
-</body>
 
+      // Spotlight view functionality
+      var modal = $('#myModal');
+      var modalImg = $('#img01');
+      var closeBtn = $('.close');
+    
+      // Open modal on image click
+      $('.grid-view-container').on('click', 'img', function() {
+        console.log('Image clicked in grid view');
+        if ($('.grid-view-container').hasClass('grid-view')) {
+          modal.css('display', 'flex');
+          modalImg.attr('src', this.src);
+        }
+      });
+    
+      // Close modal on close button click
+      closeBtn.on('click', function() {
+        modal.css('display', 'none');
+      });
+    
+      // Close modal on click outside of the image
+      modal.on('click', function(event) {
+        if (event.target === modal[0]) {
+          modal.css('display', 'none');
+        }
+      });
+    });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.grid-view img');
+    images.forEach(img => {
+      img.onload = function() {
+        if (img.naturalWidth > img.naturalHeight) {
+          img.classList.add('landscape');
+        }
+      };
+    });
+  });
+  </script>
+
+  <!-- Add this inside the body tag -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img id="img01" alt="Spotlight Image">
+    </div>
+  </div>
+</body>
 </html>

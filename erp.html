@@ -22,16 +22,17 @@
   
   <!-- Include jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/usz3fwq.css">
   <style>
     :root{
       --sliderWidth: 70%;
     }
     /* Updated CSS for the Slick slider */
     .slick-slider {
-  width: var(--sliderWidth); /* Set maximum widthdhdj */
-  margin: 0 auto; /* Center the slider horizontally */
-  margin-top: 5%;
-} 
+      width: var(--sliderWidth); /* Set maximum widthdhdj */
+      margin: 0 auto; /* Center the slider horizontally */
+      margin-top: 5%;
+    } 
 
 
 .slick-slide img {
@@ -88,6 +89,15 @@
       .slide-counter{
         margin:1%
       }
+      .luxbar-fixed {
+        display: block; /* Show luxbar on mobile view */
+      }
+      header {
+        display: none;
+      }
+      header ul {
+        background-color: rgba(192, 223, 232, 0.9);
+      }
     }
     h1 {
       margin-top: 20px;
@@ -141,8 +151,8 @@ left: -5%;
   text-align: left; 
   text-transform: none;
    justify-content: center; 
-   width: var(--sliderWidth);
-    margin: 5%; font-size: 120%;
+    margin: 5%; 
+    font-size: 100%;
     margin:auto;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -283,29 +293,120 @@ left: -5%;
     text-decoration: none;
     cursor: pointer;
   }
+
+  /* New CSS for fixed header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    padding: 10px;
+    z-index: 1000;
+    background-color: transparent;
+  }
+  header ul {
+    list-style-type: none;
+    padding: 0;
+    padding-left: 5%;
+    background-color: transparent;
+  }
+  header ul li {
+    margin: 10px 0;
+    background-color: transparent;
+  }
+  header ul li a {
+    text-decoration: none;
+    text-align: left;
+    background-color: transparent;
+  }
+  li a{
+    font-family: "owners-wide", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    background-color: transparent;
+  }
+  h1 {
+    text-align: left;
+    text-transform: uppercase;
+    background-color: transparent;
+  }
+  li{
+    background-color: transparent;
+  }
+
+  .luxbar-fixed {
+      display: none; /* Hide luxbar by default */
+    }
+  @media only screen and (max-width: 600px) {
+      p {
+        font-size: 100%;
+        margin-top: 30%;
+      }
+      li a{
+        margin-left: inherit;
+      }
+
+
+      .luxbar-brand {
+        font-size: 8vw;
+      }
+
+      .luxbar-fixed {
+        display: block; /* Show luxbar on mobile view */
+      }
+
+      .luxbar-item a{
+        text-shadow: none;
+      }
+      .backgroundInfo{
+        width: 85vw;
+      }
+      header {
+      display: none;
+      }
+      header ul {
+        background-color: rgba(192, 223, 232, 0.9);
+      }
+      menu-material-green .luxbar-item:hover {
+      background-color: rgba(192, 223, 232, 0.9);
+      } 
+      
+    }
+    .luxbar-menu-material-green .active,
+.luxbar-menu-material-green .luxbar-item:hover {
+  background-color:rgba(192, 223, 232, 0.9);
+}
+
+}
+
   </style>
 </head>
 
 <body>
+  <header>
+    <ul>
+      <h1><li></li><a href="index.html">Ollie Morris</a></li></h1>
+      <li><a href="howToTrespass.html">How to Trespass</a></li>
+      <li><a href="erp.html">E.R.P</a></li>
+      <li><a href="uprooted.html">Uprooted</a></li>
+      <li><a href="rolts.html">Rolts</a></li>
+      <li><a href="contact.html">About</a></li>
+    </ul>
+  </header>
   <header id="luxbar" class="luxbar-fixed">
-    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
     <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-green">
-        <ul class="luxbar-navigation">
-            <li class="luxbar-header">
-                <a href="index.html" class="luxbar-brand">Ollie Morris</a>
-                <label class="luxbar-hamburger luxbar-hamburger-spin" 
-                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
-            </li>
-            <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
-            <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
-  
-            <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
-  
-            <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
-
-            <li class="luxbar-item"><a href="contact.html">About</a></li>
-
-        </ul>
+      <ul class="luxbar-navigation">
+        <li class="luxbar-header">
+          <a href="index.html" class="luxbar-brand">Ollie Morris</a>
+          <label class="luxbar-hamburger luxbar-hamburger-spin" id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+        </li>
+        <li class="luxbar-item"><a href="howToTrespass.html">How to Trespass</a></li>
+        <li class="luxbar-item"><a href="erp.html">E.R.P</a></li>
+        <li class="luxbar-item"><a href="uprooted.html">Uprooted</a></li>
+        <li class="luxbar-item"><a href="rolts.html">Rolts</a></li>
+        <li class="luxbar-item"><a href="contact.html">About</a></li>
+      </ul>
     </div>
   </header>
    <div class="flex-container">
@@ -353,8 +454,8 @@ left: -5%;
   </div>
       <div class="flex-container">
     <div>
-      <p class="backgroundInfo" style="text-align: justify; text-shadow: none;">E.R.P (exposure response prevention) is a project documenting my experiences of OCD and Agoraphobia.
-      The name for the project came from the main treatment for OCD, which is can often be traumatic to go through, despite ultimately being the most effective way to help ease symptoms of the condition.
+      <p class="backgroundInfo" style="text-shadow: none; margin:7.5%">E.R.P (exposure response prevention) is a project documenting my experiences of OCD and Agoraphobia.
+      The name for the project came from the main treatment for OCD, which can often be traumatic to go through, despite ultimately being the most effective way to help ease symptoms of the condition.
     The images were created on a series of journeys as part of my exposure therapy. Where I wasn't encountering people, the marks they had left on the places I was visiting told stories on their own.</p>
     </div>
   </div>
@@ -383,7 +484,7 @@ left: -5%;
           autoplaySpeed: 2500,
           dots: false,
           arrows: false,
-          speed: 250,
+          speed: 500,
           lazyLoad: 'ondemand',
           accessibility: true,
           pauseOnFocus: true,
